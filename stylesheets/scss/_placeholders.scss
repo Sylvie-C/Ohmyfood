@@ -1,0 +1,40 @@
+@use 'variables' as * ; 
+
+%section-title {
+    font-weight: bold; 
+    font-family: roboto , sans-serif; 
+    font-size: 20px;
+}
+
+%icon { 
+    width: 20px; 
+    color: #808080; 
+}
+
+// LAYOUT
+%alignx-xycenter {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+%alignx-ycenter {
+    display: flex; 
+    align-items: center; 
+}
+
+%alignx-xcenter {
+    display: flex; 
+    justify-content: center; 
+}
+
+%aligny-xleft {
+    display: flex; 
+    flex-direction: column; 
+}
+
+%aligny-xcenter {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}

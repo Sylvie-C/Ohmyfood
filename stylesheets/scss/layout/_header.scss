@@ -1,8 +1,6 @@
-@use "variables" as * ; 
-@use 'placeholders' as * ;
-@use 'mixins' as * ; 
-@use 'fonts' as * ; 
- 
+@use "../utils/variables" as * ; 
+@use '../utils/mixins' as * ; 
+@use '../utils/placeholders' as * ; 
 
 .header { 
 
@@ -36,8 +34,8 @@
     }
 
     &__location--text {
-        font-family: roboto, sans-serif;  
-        font-weight: bold;    
+        font-family: roboto, sans-serif;   
+        font-weight: bolder;    
         font-size: .85rem; 
     }
 }

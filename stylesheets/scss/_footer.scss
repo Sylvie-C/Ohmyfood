@@ -1,3 +1,5 @@
+@use 'placeholders' as * ; 
+
 .footer {
-    background: blueviolet; 
+    @extend %aligny-xleft; 
 }

@@ -1,0 +1,56 @@
+@use '../utils/variables' as * ; 
+@use '../utils/placeholders' as * ; 
+@use '../utils/mixins' as * ; 
+
+
+// Body (whole pages)
+body { 
+    margin: 0; 
+
+    .body__container {
+        position: static; 
+        top: 0; 
+        left: 0; 
+
+        max-width: 1440px; 
+    }
+
+    .body__loader {
+        width: 50px; 
+
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+
+        opacity: 0.8 ; 
+
+        background: $omf-lightgreen; 
+ 
+        animation: loader-anim linear 3s;
+        opacity:0  // to be placed after animation to hide it
+    }
+}
+
+body * {
+    box-sizing: border-box; 
+ 
+    font-family: roboto , sans-serif;  
+    .fa-solid { @extend %icon ; }
+
+    a {
+        text-decoration: none;
+        color: black; 
+    }
+}
+
+// fonts
+
+@font-face { 
+    font-family: shrikhand ; 
+    src: url("../../fonts/shrikhand.ttf") ; 
+}
+
+@font-face {
+    font-family: roboto; 
+    src: url('../../fonts/roboto.ttf') ; 
+}

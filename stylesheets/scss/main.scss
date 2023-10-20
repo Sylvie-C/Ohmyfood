@@ -1,4 +1,24 @@
-@use 'header' ; 
-@use 'footer' ; 
+// import utils
+@use 'utils/variables' as * ; 
+@use 'utils/placeholders' as * ; 
+@use 'utils/mixins' as * ; 
+
+// import base styles for whole website
+@use 'base/normalize' as * ; 
+
+// import specific styles for home page
+@use 'pages/home' as * ; 
+
+// import specific styles for header
+@use 'layout/header' as * ; 
+
+// import specific styles for search section
+@use 'layout/search' as * ; 
+
+// import specific styles for footer
+@use 'layout/footer' ; 
 
 
+
+// fichier provisoire contenu main
+@use 'miscellaneous' ;
