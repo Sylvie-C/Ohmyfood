@@ -1,21 +1,12 @@
 @use '../utils/variables' as * ; 
-@use '../utils/placeholders' as * ; 
 @use '../utils/mixins' as * ; 
 
 
 // Body (whole pages)
-body { 
+.body { 
     margin: 0; 
 
-    .body__container {
-        position: static; 
-        top: 0; 
-        left: 0; 
-
-        max-width: 1440px; 
-    }
-
-    .body__loader {
+    &__loader {
         width: 50px; 
 
         position: absolute; 
@@ -29,13 +20,23 @@ body {
         animation: loader-anim linear 3s;
         opacity:0  // to be placed after animation to hide it
     }
+
+    &__container {
+        position: static; 
+        top: 0; 
+        left: 0; 
+
+        max-width: 1440px; 
+    }
 }
+
+ 
 
 body * {
     box-sizing: border-box; 
  
     font-family: roboto , sans-serif;  
-    .fa-solid { @extend %icon ; }
+    .fa-solid { @include icon ; }
 
     a {
         text-decoration: none;

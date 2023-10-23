@@ -1,7 +1,7 @@
 @use 'variables' as * ; 
 
 
-//FORMAT
+// FORMAT
 @mixin section-title {
     font-weight: bold; 
     font-family: roboto , sans-serif; 
@@ -13,7 +13,7 @@
 // icons
 @mixin icon { 
     width: 20px; 
-    color: #808080; 
+    color: #808080;
 }
 
 // "Nouveau" sticker
@@ -31,6 +31,32 @@
     right: 10px; 
 }
 
+// buttons
+@mixin button01 {
+    border: none; 
+    border-radius: 100px;
+    box-shadow: $bshadow ; 
+
+    text-align: center;
+
+    text-decoration: none; 
+    color: white;
+    font-size: .87rem; 
+    font-weight: 600; 
+
+    padding: 8px 20px; 
+    margin: 20px 0 ; 
+    line-height: 2;
+
+    background: linear-gradient(180deg, $second-color -30%, $primary-color 110%);
+    
+    transition: all 300ms ease-in-out; 
+}
+
+@mixin button01-hover {
+    filter: opacity(.8) ;
+    box-shadow: $bshadow-dark ; 
+}
 
 // LAYOUT
 @mixin alignx {

@@ -1,8 +1,8 @@
 @use '../utils/variables' as * ; 
-@use '../utils/placeholders' as * ; 
+@use '../utils/mixins' as * ; 
 
 .footer {
-    @extend %aligny; 
+    @include aligny; 
 
     background: $omf-gray; 
     * { 
@@ -15,7 +15,7 @@
     
     row-gap: 5px; 
     
-    .footer__title {
+    &__title {
         font-family: shrikhand; 
         font-size: 0.95rem;
     }

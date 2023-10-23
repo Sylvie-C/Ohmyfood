@@ -1,21 +1,36 @@
 
-
-// Titre principal (section search)
-
+// Main Title ("Réservez le menu qui vous convient")
 
 
 
 // animation loader
-@keyframes loader-anim {
+@keyframes loader-bckgd {
+    0% { background-color: black; }
+
+    95% { background-color: rgb(0,0,0,1); }
+    100% { background-color: rgba(0,0,0,0) ; }
+}
+
+
+@keyframes loader-img {
     0% {
         transform: rotate(0deg);
         opacity: 1; 
     }
-    90% {
-        opacity: 0.8; 
-    }
+
+    95% { opacity: 0.9; }
     100% {
-      transform: rotate(360deg);
+      transform: rotate(720deg);
       opacity: 0; 
     }
+}
+
+
+// Pictures Framing "Restaurants" section
+
+%pixframing {
+    .pix01 { object-position: 0 100%; }
+    .pix02 { object-position: 0 61.5%; }
+    .pix03 { object-position: 0 100%; }
+    .pix04 { object-position: 0 95%; }
 }
