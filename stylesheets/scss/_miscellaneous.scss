@@ -12,7 +12,9 @@
     height: 100%; 
 
     position: absolute; 
+    background: black; 
 
+    // placed much over page, to hide everything
     z-index: 10; 
 
     display: flex; 
@@ -25,7 +27,7 @@
     &__img {
         width: 50px; 
         animation: loader-img 3s ease-out; 
-        animation-fill-mode: forwards; // loader img remains invisible (opacity)
+        animation-fill-mode: forwards; // loader img must remain invisible (opacity)
     }
 }
 

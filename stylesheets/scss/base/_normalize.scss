@@ -1,25 +1,21 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
 
+// no scroll bar during loader animation (body)
+@keyframes noscroll {
+    0% {
+        overflow: hidden; 
+    }
+
+    98% {overflow: hidden; }
+    100% {
+        overflow: scroll; 
+    }
+}
 
 // Body (whole pages)
 .body { 
     margin: 0; 
-
-    &__loader {
-        width: 50px; 
-
-        position: absolute; 
-        top: 50%; 
-        left: 50%; 
-
-        opacity: 0.8 ; 
-
-        background: $omf-lightgreen; 
- 
-        animation: loader-anim linear 3s;
-        opacity:0  // to be placed after animation to hide it
-    }
 
     &__container {
         position: static; 
@@ -28,6 +24,9 @@
 
         max-width: 1440px; 
     }
+
+    // hide scroll bar during loader animation
+    animation: 3s noscroll linear ; 
 }
 
  
