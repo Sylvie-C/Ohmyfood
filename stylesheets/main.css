@@ -64,6 +64,14 @@ body * a {
     opacity: 0;
   }
 }
+@keyframes heart-visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .card .pix01 {
   object-position: 0 100%;
 }
@@ -146,6 +154,7 @@ body * a {
 .search__button:hover {
   filter: opacity(0.8);
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .footer {
@@ -280,16 +289,30 @@ body * a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
   position: static;
 }
-.card__fav img {
-  color: #4d4d4d;
-  width: 18px;
+.card__fav > .heart-default {
+  opacity: 1;
+}
+.card__fav > .heart-like {
+  opacity: 0;
+}
+.card__fav:hover > .heart-default {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.card__fav:hover > .heart-like {
+  animation: heart-visible 300ms linear;
+  animation-fill-mode: forwards;
+}
+.card__fav .heart-default, .card .heart-like {
+  width: 22px;
   margin: 10px;
   position: absolute;
   right: 20px;
 }
-.card .plain {
-  display: none;
+.card .heart-default {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 2;
 }/*# sourceMappingURL=main.css.map */

@@ -133,22 +133,37 @@
     }
     &__fav {
         @include alignx-xycenter; 
-        width: fit-content; 
-
         position: static; // for hearts icon position
+
+        & > .heart-default { opacity: 1; }
+        & > .heart-like { opacity: 0; }
+
+        &:hover {
+            & > .heart-default {
+                opacity: 0; 
+                transition: opacity 300ms linear ; 
+            }
+
+            & > .heart-like {
+                animation: heart-visible 300ms linear ; 
+                animation-fill-mode: forwards; 
+            }
+        }
     }
-    &__fav img {
-        color: $omf-gray;
-        width: 18px; 
+
+    &__fav .heart-default, .heart-like  {
+        width: 22px;
         margin: 10px; 
 
         position: absolute; 
         right: 20px; 
     }
 
-    
-    // to be implemented : function to toggle display/hide for both .plain and .empty hearts
-    .plain {
-        display: none; 
+    .heart-default { 
+        fill: transparent; 
+        stroke: black;  
+        stroke-width: 2;
     }
+
 }
+

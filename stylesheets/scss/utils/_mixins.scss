@@ -53,9 +53,12 @@
     transition: all 300ms ease-in-out; 
 }
 
+
 @mixin button01-hover {
     filter: opacity(.8) ;
     box-shadow: $bshadow-dark ; 
+
+    cursor: pointer; 
 }
 
 // LAYOUT

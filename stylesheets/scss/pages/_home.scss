@@ -1,4 +1,7 @@
 
+
+// KEYFRAMES
+
 // animation loader
 @keyframes loader-bckgd {
     // Loader background starts to fade out in the end of animation
@@ -27,6 +30,10 @@
     }
 }
 
+@keyframes heart-visible {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 // Pictures Framing "Restaurants" section
 
