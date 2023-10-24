@@ -1,49 +1,51 @@
 @use '../utils/variables' as * ; 
-@use '../utils/placeholders' as * ; 
 @use '../utils/mixins' as * ; 
 
 
-// Body (whole pages)
-body { 
-    margin: 0; 
+// -------  KEYFRAMES  -------
 
-    .body__container {
-        position: static; 
-        top: 0; 
-        left: 0; 
-
-        max-width: 1440px; 
+// no scroll bar during loader animation (body)
+@keyframes noscroll {
+    0% {
+        overflow: hidden; 
     }
 
-    .body__loader {
-        width: 50px; 
-
-        position: absolute; 
-        top: 50%; 
-        left: 50%; 
-
-        opacity: 0.8 ; 
-
-        background: $omf-lightgreen; 
- 
-        animation: loader-anim linear 3s;
-        opacity:0  // to be placed after animation to hide it
+    98% {overflow: hidden; }
+    100% {
+        overflow: scroll; 
     }
 }
 
-body * {
-    box-sizing: border-box; 
- 
-    font-family: roboto , sans-serif;  
-    .fa-solid { @extend %icon ; }
+// animation loader
+@keyframes loader-bckgd {
+    // Loader background starts to fade out in the end of animation
+    95% { 
+        background-color: rgb(0,0,0,1); 
 
-    a {
-        text-decoration: none;
-        color: black; 
+        z-index: 10;}
+    100% { 
+        background-color: rgba(0,0,0,0) ; 
+
+        // placed much behind page (to prevent interaction on elements)
+        z-index: -10; 
     }
 }
 
-// fonts
+@keyframes loader-img {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1; 
+    }
+
+    95% { opacity: 0.9; }
+    100% {
+      transform: rotate(720deg);
+      opacity: 0;
+    }
+}
+
+
+// -------  FONTS  -------
 
 @font-face { 
     font-family: shrikhand ; 
@@ -54,3 +56,60 @@ body * {
     font-family: roboto; 
     src: url('../../fonts/roboto.ttf') ; 
 }
+
+
+// -------  BODY  -------
+
+.body { 
+    margin: 0; 
+
+    // hide scroll bar during loader animation
+    animation: 3s noscroll linear ; 
+
+    &__container {
+        position: static; 
+        top: 0; 
+        left: 0; 
+    }
+}
+
+body * {
+    box-sizing: border-box; 
+ 
+    font-family: roboto , sans-serif;  
+
+    .fa-solid { @include icon ; }
+
+    a {
+        text-decoration: none;
+        color: black; 
+    }
+}
+
+
+// ------ LOADER -------
+
+.loader {
+    width: 100%; 
+    height: 100%; 
+
+    position: absolute; 
+    background: black; 
+
+    // placed much over page, to hide everything
+    z-index: 10; 
+
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    animation: loader-bckgd 3s ease-in-out ; 
+    animation-fill-mode: forwards; 
+
+    &__img {
+        width: 50px; 
+        animation: loader-img 3s ease-out; 
+        animation-fill-mode: forwards; // loader img must remain invisible (opacity)
+    }
+}
+

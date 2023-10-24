@@ -1,6 +1,5 @@
 @use "../utils/variables" as * ; 
 @use '../utils/mixins' as * ; 
-@use '../utils/placeholders' as * ; 
 
 .header { 
 
@@ -18,7 +17,7 @@
     }
  
     &__location {
-        @extend %alignx-xycenter; 
+        @include alignx-xycenter; 
         height: 44px; 
         background: #f0f0f0; 
     }
