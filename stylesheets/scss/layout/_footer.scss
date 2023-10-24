@@ -2,26 +2,26 @@
 @use '../utils/mixins' as * ; 
 
 .footer {
-    @include aligny; 
+    @include aligny;
 
     background: $omf-gray; 
-    * { 
-        color: white; 
-        font-size: 0.8rem; 
-    }
+    padding: 8px 0 20px 20px; 
+    row-gap: 4px; 
     
-    padding-left: 20px;
-    padding-bottom: 20px; 
-    
-    row-gap: 5px; 
-    
+    * { color: white; }
+
     &__title {
         font-family: shrikhand; 
-        font-size: 0.95rem;
-    }
-    .fa-solid {
-        color: white; 
+        font-size: 0.86rem;
     }
     
-    a:hover { text-decoration: underline;}
+     &__linksblock {
+        font-size: .84rem;
+        .fa-solid { color: white; }
+        a:hover { text-decoration: underline; }
+
+        @include aligny; 
+        row-gap: 4px; 
+    }   
+
 }

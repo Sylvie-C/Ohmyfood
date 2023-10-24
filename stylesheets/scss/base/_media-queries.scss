@@ -1,0 +1,96 @@
+@use '../utils/mixins' as * ; 
+
+/* Media queries based on common breakpoints here after : 
+    • Mobile devices – 320px — 480px.
+    • iPads, Tablets – 481px — 768px.
+    • Small screens, laptops – 769px — 1024px.
+    • Desktops, large screens – 1025px — 1200px.
+    • Extra large screens, TV – 1201px, and more.
+*/
+
+@media (min-width: 481px) {
+
+}
+
+@media (min-width: 1025px) {
+
+  .search {
+    row-gap: 24px; 
+
+    &__title {
+      font-size: 2.2rem; 
+    } 
+
+    &__button {
+      margin: 0; 
+    }
+  }
+
+  .fonct {
+
+    &__cardsblock {
+
+      flex-direction: row; // default responsive : flexbox column
+      justify-content: center; 
+
+      column-gap: 3%; 
+
+      &__card{
+        width: 26%; 
+      }
+    }
+    
+  }
+
+  .resto {
+
+    &__cardsblock {
+
+      flex-direction: row;  // default responsive : flex column
+      justify-content: center; 
+      flex-wrap: wrap; 
+
+      row-gap: 44px;
+      column-gap: 90px; 
+
+      .card {
+
+        width: 460px; 
+      }
+    }
+  }
+
+  .footer {
+    padding: 40px 20px 16px 20px ; 
+    flex-direction: row-reverse;  // default responsive : flex column
+    column-gap: 70px; 
+
+    &__title { font-size: 1rem; }
+
+    &__linksblock {
+      font-size: .88rem; 
+
+      margin: 20px; 
+
+      flex-direction: row; 
+      align-items: center; 
+
+      column-gap: 18px; 
+
+      .fa-xs { font-size: 13px; }
+
+      a:nth-child(3) { padding-left: 30px; }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .body {
+    display: flex; 
+    justify-content: center;
+
+    &__container {
+      max-width: 1440px; // max-width to prevent stretch of pages on very large screens.
+    }
+  }
+}

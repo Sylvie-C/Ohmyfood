@@ -1,4 +1,5 @@
 
+
 // import base styles for whole website
 @use 'base/normalize' ; 
 
@@ -8,13 +9,8 @@
 // import specific styles for header
 @use 'layout/header' ; 
 
-// import specific styles for search section
-@use 'layout/search' ; 
-
 // import specific styles for footer
 @use 'layout/footer' ; 
 
-
-
-// fichier provisoire contenu main
-@use 'miscellaneous' ;
+// import media queries
+@use 'base/media-queries' ; 

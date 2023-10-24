@@ -1,45 +1,189 @@
+@use '../utils/variables' as * ; 
+@use '../utils/mixins' as * ; 
+@use '../utils/placeholders' as * ; 
 
 
-// KEYFRAMES
+// -------  SEARCH SECTION  -------
 
-// animation loader
-@keyframes loader-bckgd {
-    // Loader background starts to fade out in the end of animation
-    95% { 
-        background-color: rgb(0,0,0,1); 
+.search {
+    @include aligny-xcenter; 
+    row-gap: 10px; 
+    
+    padding: 30px 0; 
+    background: $omf-lightgray; 
 
-        z-index: 10;}
-    100% { 
-        background-color: rgba(0,0,0,0) ; 
+    &__title {
+        font-size: 1.22rem; 
+        font-weight: bolder; 
+        text-align: center;
+        margin: 0 46px; 
+    }
 
-        // placed much behind page (to prevent interaction on elements)
-        z-index: -10; 
+    &__text {
+        font-weight: 100; 
+        color: $omf-gray; 
+        text-align: center; 
+        margin: 0 20px; 
+    }
+
+    &__button {
+        @include button01 ; 
+
+        &:hover {
+            @include button01-hover ; 
+        }
     }
 }
 
-@keyframes loader-img {
-    0% {
-        transform: rotate(0deg);
-        opacity: 1; 
+
+// ---------  "FONCTIONNEMENT" SECTION  ---------
+
+.fonct {
+    padding:  24px 20px ;
+
+    &__title {
+        @include section-title; 
     }
 
-    95% { opacity: 0.9; }
-    100% {
-      transform: rotate(720deg);
-      opacity: 0;
+    &__cardsblock {
+
+        @include aligny; 
+        row-gap: 18px; 
+
+        &__card {
+            @include alignx-ycenter; 
+            column-gap: 10px; 
+            width: 100%; 
+
+            border-radius: 15px; 
+            background: $omf-lightgray; 
+            box-shadow: $bshadow; 
+
+            .fonct__nb {
+                color: white; 
+                background: $primary-color; 
+
+                border-radius: 50%;
+                padding: 1px 6px; 
+
+                position: relative; 
+                left: -10px; 
+            }
+
+            .fonct__text {
+                font-weight: bold; 
+                color: $omf-gray; 
+
+                margin: 24px 0px; 
+            }
+        }
+
+        &__card:hover {
+            .fa-solid { color: $primary-color ; }
+        }
     }
 }
 
+
+// ---------  RESTAURANTS SECTION  ---------
+
+// Keyframes for hearts empty-filled animation
 @keyframes heart-visible {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-// Pictures Framing "Restaurants" section
+.resto {
+    margin: 40px 0 0 0; 
+    padding: 30px 10px; 
 
-%pixframing {
-    .pix01 { object-position: 0 100%; }
-    .pix02 { object-position: 0 61.5%; }
-    .pix03 { object-position: 0 100%; }
-    .pix04 { object-position: 0 95%; }
+    background: $omf-lightgray; 
+
+    .resto__title {
+        @include section-title; 
+    }
+
+    .new {
+        @include new ; 
+    }
+
+    &__cardsblock {
+
+        @include aligny; 
+        row-gap: 14px;
+
+        .card {
+            background-color: white; 
+            border-radius: 15px;
+            padding: 2px;
+            filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+        
+            &__pix {
+                object-fit: cover;
+        
+                width: 100%; 
+                height: 148px; 
+            
+                border-top-left-radius: 15px; 
+                border-top-right-radius: 15px;
+            }
+        
+            // pictures framing
+            @extend %pixframing ; 
+        
+            &__info {  
+                display: flex; 
+                justify-content: space-between; 
+        
+                padding: 14px 10px ; 
+            }
+
+            &__info * {
+                margin: 0 ; 
+            }
+
+            &__subtitle {
+                font-weight: 100; 
+                color: $omf-gray; 
+            }
+
+            &__fav {
+                @include alignx-xycenter; 
+                position: relative; // for hearts icon position
+        
+                & > .heart-default { opacity: 1; }
+                & > .heart-like { opacity: 0; }
+        
+                &:hover {
+                    & > .heart-default {
+                        opacity: 0; 
+                        transition: opacity 300ms linear ; 
+                    }
+        
+                    & > .heart-like {
+                        animation: heart-visible 300ms linear ; 
+                        animation-fill-mode: forwards; 
+                    }
+                }
+            }
+        
+            &__fav .heart-default, .heart-like  {
+                width: 22px;
+        
+                position: absolute; 
+                right: 10px; 
+            }
+        
+            .heart-default { 
+                fill: transparent; 
+                stroke: black;  
+                stroke-width: 2;
+            }
+
+        }
+    }
 }
+
+
+
+
