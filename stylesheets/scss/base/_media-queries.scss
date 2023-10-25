@@ -45,7 +45,6 @@
   .resto {
 
     &__cardsblock {
-
       flex-direction: row;  // default responsive : flex column
       justify-content: center; 
       flex-wrap: wrap; 
@@ -54,8 +53,12 @@
       column-gap: 90px; 
 
       .card {
-
         width: 460px; 
+
+        .pix01 { object-position: 0 70%; }
+        .pix02 { object-position: 0 58%; }
+        .pix03 { object-position: 0 70%; }
+        .pix04 { object-position: 0 70%; }
       }
     }
   }

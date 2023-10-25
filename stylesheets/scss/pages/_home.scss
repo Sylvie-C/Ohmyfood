@@ -1,6 +1,5 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
-@use '../utils/placeholders' as * ; 
 
 
 // -------  SEARCH SECTION  -------
@@ -129,7 +128,10 @@
             }
         
             // pictures framing
-            @extend %pixframing ; 
+            .pix01 { object-position: 0 100%; }
+            .pix02 { object-position: 0 61.5%; }
+            .pix03 { object-position: 0 100%; }
+            .pix04 { object-position: 0 95%; }
         
             &__info {  
                 display: flex; 
