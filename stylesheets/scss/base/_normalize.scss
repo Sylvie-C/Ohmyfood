@@ -47,17 +47,14 @@
 
 // -------  FONTS  -------
 
-// fonts from cloud
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
-
 // fonts locally
 @font-face { 
     font-family: shrikhand ; 
-    src: url("../../fonts/shrikhand.ttf") ; 
+    src: url("../../../fonts/shrikhand.ttf") ; 
 }
 @font-face {
     font-family: roboto; 
-    src: url('../../fonts/roboto.ttf') ; 
+    src: url('../../../fonts/roboto.ttf') ; 
 }
 
 
