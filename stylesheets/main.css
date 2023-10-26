@@ -37,11 +37,11 @@ Default display: none -> vertical alignment. */
 }
 @font-face {
   font-family: shrikhand;
-  src: url("/fonts/shrikhand.ttf");
+  src: url("../fonts/shrikhand.ttf");
 }
 @font-face {
   font-family: roboto;
-  src: url("/fonts/roboto.ttf");
+  src: url("../fonts/roboto.ttf");
 }
 .body {
   margin: 0;
