@@ -15,6 +15,11 @@
         position: relative; 
         z-index: 2;
     }
+
+    &__title--noshadow {
+        z-index: 1; // for restaurants pages
+    }
+
  
     &__location {
         @include alignx-xycenter; 
@@ -23,13 +28,21 @@
     }
 
     &__location * {
-        margin: 0 6px; 
         color: $omf-gray ;  
+
+        // for button and input
+        border: none; 
+        background: none; 
     }
 
     &__location--icon {
         width: 12px; 
         height: 14px; 
+        margin: 0 6px; 
+    }
+
+    input {
+        width: 100px; 
     }
 
     &__location--text {
@@ -37,5 +50,18 @@
         font-weight: bolder;    
         font-size: .85rem; 
     }
+
+    // for restaurants pages
+    &__link {
+        position: absolute; 
+        top: 14px; 
+        left: 14px; 
+
+        z-index: 3; 
+    }
+
+
 }
+
+
 

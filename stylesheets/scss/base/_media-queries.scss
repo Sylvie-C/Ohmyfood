@@ -1,3 +1,4 @@
+@use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
 
 /* Media queries based on common breakpoints here after : 
@@ -18,7 +19,8 @@
     row-gap: 24px; 
 
     &__title {
-      font-size: 2.2rem; 
+      // font-size: 2.2rem; 
+      @include myfont (roboto , 2.2rem) ; 
     } 
 
     &__button {

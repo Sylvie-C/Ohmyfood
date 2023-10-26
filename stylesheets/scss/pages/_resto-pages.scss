@@ -1,0 +1,58 @@
+@use '../utils/variables' as * ; 
+@use '../utils/mixins' as * ; 
+
+.resto-page {
+
+    &__pix {
+        width: 100%; 
+    }
+
+    &__menu {
+
+        background: $omf-lightgray; 
+        border-radius: 30px ; 
+
+        position: absolute; 
+        top: 250px; 
+
+        width: 100%; 
+
+        .menu__header {
+            .menu__title {
+                @include myfont (shrikhand , .87rem); 
+            }
+
+            .menu__fav {
+                @include heart-icons; 
+            }
+        }
+
+        .menu__dishblock {
+
+            .dish__title {
+
+            }
+
+
+
+
+        }
+
+
+
+
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px;
+            filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+        }
+        
+        .card img {
+            object-fit: cover;
+        }
+
+
+    }
+    
+}

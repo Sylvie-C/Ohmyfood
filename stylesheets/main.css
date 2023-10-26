@@ -53,7 +53,16 @@
 
 body * {
   box-sizing: border-box;
-  font-family: roboto, sans-serif;
+  /*
+      mixin to generate set of properties for  customized font, 
+      based on font name and size defined by current Design System. 
+      parameters : 2 -> font name , font size.
+
+      fontsize must receive value+unit. 
+      fontnames just treat 'roboto' or 'shrikhand' design system fonts
+      (with serif or sans-serif). 
+  */
+  font-family: roboto, "sans-serif";
 }
 body * .fa-solid {
   width: 20px;
@@ -128,8 +137,16 @@ body * a {
 }
 .fonct__title {
   font-weight: bold;
-  font-family: roboto, sans-serif;
-  font-size: 20px;
+  /*
+      mixin to generate set of properties for  customized font, 
+      based on font name and size defined by current Design System. 
+      parameters : 2 -> font name , font size.
+
+      fontsize must receive value+unit. 
+      fontnames just treat 'roboto' or 'shrikhand' design system fonts
+      (with serif or sans-serif). 
+  */
+  font-family: roboto, "sans-serif";
 }
 .fonct__cardsblock {
   display: flex;
@@ -177,8 +194,16 @@ body * a {
 }
 .resto .resto__title {
   font-weight: bold;
-  font-family: roboto, sans-serif;
-  font-size: 20px;
+  /*
+      mixin to generate set of properties for  customized font, 
+      based on font name and size defined by current Design System. 
+      parameters : 2 -> font name , font size.
+
+      fontsize must receive value+unit. 
+      fontnames just treat 'roboto' or 'shrikhand' design system fonts
+      (with serif or sans-serif). 
+  */
+  font-family: roboto, "sans-serif";
 }
 .resto .new {
   font-size: 12px;
@@ -244,6 +269,16 @@ body * a {
 .resto__cardsblock .card__fav > .heart-like {
   opacity: 0;
 }
+.resto__cardsblock .card__fav .heart-default, .resto__cardsblock .card__fav .heart-like {
+  width: 22px;
+  position: absolute;
+  right: 10px;
+}
+.resto__cardsblock .card__fav .heart-default {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 2;
+}
 .resto__cardsblock .card__fav:hover > .heart-default {
   opacity: 0;
   transition: opacity 300ms linear;
@@ -252,15 +287,67 @@ body * a {
   animation: heart-visible 300ms linear;
   animation-fill-mode: forwards;
 }
-.resto__cardsblock .card__fav .heart-default, .resto__cardsblock .card .heart-like {
+
+.resto-page__pix {
+  width: 100%;
+}
+.resto-page__menu {
+  background: #f7f7f7;
+  border-radius: 30px;
+  position: absolute;
+  top: 250px;
+  width: 100%;
+}
+.resto-page__menu .menu__header .menu__title {
+  /*
+      mixin to generate set of properties for  customized font, 
+      based on font name and size defined by current Design System. 
+      parameters : 2 -> font name , font size.
+
+      fontsize must receive value+unit. 
+      fontnames just treat 'roboto' or 'shrikhand' design system fonts
+      (with serif or sans-serif). 
+  */
+  font-family: shrikhand, "serif";
+}
+.resto-page__menu .menu__header .menu__fav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.resto-page__menu .menu__header .menu__fav > .heart-default {
+  opacity: 1;
+}
+.resto-page__menu .menu__header .menu__fav > .heart-like {
+  opacity: 0;
+}
+.resto-page__menu .menu__header .menu__fav .heart-default, .resto-page__menu .menu__header .menu__fav .heart-like {
   width: 22px;
   position: absolute;
   right: 10px;
 }
-.resto__cardsblock .card .heart-default {
+.resto-page__menu .menu__header .menu__fav .heart-default {
   fill: transparent;
   stroke: black;
   stroke-width: 2;
+}
+.resto-page__menu .menu__header .menu__fav:hover > .heart-default {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.resto-page__menu .menu__header .menu__fav:hover > .heart-like {
+  animation: heart-visible 300ms linear;
+  animation-fill-mode: forwards;
+}
+.resto-page__menu .card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+.resto-page__menu .card img {
+  object-fit: cover;
 }
 
 .header__title {
@@ -273,6 +360,9 @@ body * a {
   position: relative;
   z-index: 2;
 }
+.header__title--noshadow {
+  z-index: 1;
+}
 .header__location {
   display: flex;
   justify-content: center;
@@ -281,17 +371,28 @@ body * a {
   background: #f0f0f0;
 }
 .header__location * {
-  margin: 0 6px;
   color: #4d4d4d;
+  border: none;
+  background: none;
 }
 .header__location--icon {
   width: 12px;
   height: 14px;
+  margin: 0 6px;
+}
+.header input {
+  width: 100px;
 }
 .header__location--text {
   font-family: roboto, sans-serif;
   font-weight: bolder;
   font-size: 0.85rem;
+}
+.header__link {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
 }
 
 .footer {
@@ -333,7 +434,16 @@ body * a {
     row-gap: 24px;
   }
   .search__title {
-    font-size: 2.2rem;
+    /*
+        mixin to generate set of properties for  customized font, 
+        based on font name and size defined by current Design System. 
+        parameters : 2 -> font name , font size.
+
+        fontsize must receive value+unit. 
+        fontnames just treat 'roboto' or 'shrikhand' design system fonts
+        (with serif or sans-serif). 
+    */
+    font-family: roboto, "sans-serif";
   }
   .search__button {
     margin: 0;
