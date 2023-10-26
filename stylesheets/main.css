@@ -55,16 +55,7 @@ Default display: none -> vertical alignment. */
 
 body * {
   box-sizing: border-box;
-  /*
-      mixin to generate set of properties for  customized font, 
-      based on font name and size defined by current Design System. 
-      parameters : 2 -> font name , font size.
-
-      fontsize must receive value+unit. 
-      fontnames just treat 'roboto' or 'shrikhand' design system fonts
-      (with serif or sans-serif). 
-  */
-  font-family: roboto, sans-serif;
+  font-family: roboto;
 }
 body * .fa-solid {
   width: 20px;
@@ -139,16 +130,7 @@ body * a {
 }
 .fonct__title {
   font-weight: bold;
-  /*
-      mixin to generate set of properties for  customized font, 
-      based on font name and size defined by current Design System. 
-      parameters : 2 -> font name , font size.
-
-      fontsize must receive value+unit. 
-      fontnames just treat 'roboto' or 'shrikhand' design system fonts
-      (with serif or sans-serif). 
-  */
-  font-family: roboto, sans-serif;
+  font-size: 1.25rem;
 }
 .fonct__cardsblock {
   display: flex;
@@ -196,16 +178,7 @@ body * a {
 }
 .resto .resto__title {
   font-weight: bold;
-  /*
-      mixin to generate set of properties for  customized font, 
-      based on font name and size defined by current Design System. 
-      parameters : 2 -> font name , font size.
-
-      fontsize must receive value+unit. 
-      fontnames just treat 'roboto' or 'shrikhand' design system fonts
-      (with serif or sans-serif). 
-  */
-  font-family: roboto, sans-serif;
+  font-size: 1.25rem;
 }
 .resto .new {
   font-size: 12px;
@@ -290,20 +263,18 @@ body * a {
   animation-fill-mode: forwards;
 }
 
-.resto-page {
-  display: flex;
-  justify-content: center;
-}
-.resto-page__pix {
+.resto-page .picture {
+  background-image: url("../images/restaurants/palette_du_gout.jpg");
+  background-size: cover;
   width: 100%;
+  height: 250px;
 }
 .resto-page .menu {
   background: #f7f7f7;
   border-radius: 30px;
-  position: absolute;
-  top: 250px;
+  margin-top: -40px;
   width: 100%;
-  padding: 1.87rem 0.6rem;
+  padding: 12px;
 }
 .resto-page .menu__btnfield {
   width: 100%;
@@ -330,6 +301,11 @@ body * a {
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
+.resto-page .footer {
+  position: absolute;
+  bottom: 0;
+}
+
 .menu__header {
   display: flex;
   justify-content: space-between;
@@ -492,16 +468,8 @@ body * a {
     row-gap: 24px;
   }
   .search__title {
-    /*
-        mixin to generate set of properties for  customized font, 
-        based on font name and size defined by current Design System. 
-        parameters : 2 -> font name , font size.
-
-        fontsize must receive value+unit. 
-        fontnames just treat 'roboto' or 'shrikhand' design system fonts
-        (with serif or sans-serif). 
-    */
-    font-family: roboto, sans-serif;
+    font-family: roboto;
+    font-size: 2.2rem;
   }
   .search__button {
     margin: 0;

@@ -3,7 +3,7 @@
 // -------  FONTS MIXINS  -------
 @mixin section-title {
     font-weight: bold; 
-    @include myfont (roboto, 1.25rem) ; 
+    font-size: 1.25rem; 
 }
 
 @mixin myfont ($fontname , $fontsize:1rem) {
@@ -24,7 +24,6 @@
 
     $font-size: #{$fontsize} ; 
 }
-
 
 // -------  COMPONENTS  -------
 // icons
@@ -75,8 +74,6 @@
         cursor: pointer; 
     }
 }
-
-
 
 // icons heart container
 @mixin heart-icons {

@@ -21,7 +21,8 @@
 
     &__title {
       // font-size: 2.2rem; 
-      @include myfont (roboto , 2.2rem) ; 
+      font-family: roboto; 
+      font-size: 2.2rem ; 
     } 
 
     &__button {

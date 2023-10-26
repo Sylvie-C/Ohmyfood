@@ -51,11 +51,11 @@
 
 @font-face { 
     font-family: shrikhand ; 
-    src: url("/fonts/shrikhand.ttf") ; 
+    src: url("../fonts/shrikhand.ttf") ; 
 }
 @font-face {
     font-family: roboto; 
-    src: url('/fonts/roboto.ttf') ; 
+    src: url('../fonts/roboto.ttf') ; 
 }
 
 
@@ -77,7 +77,7 @@
 body * {
     box-sizing: border-box; 
  
-    @include myfont (roboto) ; 
+    font-family: roboto; 
 
     .fa-solid { @include icon ; }
 
