@@ -1,0 +1,79 @@
+@use '../utils/variables' as * ; 
+@use '../utils/mixins' as * ; 
+
+.resto-page {
+    @include alignx-xcenter; 
+
+    &__pix {
+        width: 100%; 
+    }
+
+    .menu {
+
+        background: $omf-lightgray; 
+        border-radius: 30px ; 
+
+        position: absolute; 
+        top: 250px; 
+        width: 100%; 
+        padding: 1.87rem 0.6rem ; 
+
+        &__btnfield {
+            width: 100%; 
+            @include alignx-xcenter; 
+        }
+
+        &__btn {
+            @include btn01; 
+        }
+    }
+
+    .footer {
+    }
+}
+
+.menu__header {
+    display: flex; 
+    justify-content: space-between; 
+
+    margin: .6rem; 
+
+    .menu__title {
+        @include myfont ('shrikhand' , 12px); 
+    }
+    .menu__fav {
+        @include heart-icons; 
+    }
+}
+
+.dishblock {
+    
+    button {
+        width: 100%; 
+        border:  none; 
+        background: none; 
+        cursor: pointer; 
+    }
+}
+
+.card02 {
+    @include card02 ; 
+
+    display: flex; 
+    justify-content: space-between; 
+    align-items:last baseline; 
+
+    &__text {
+        text-align: left; 
+        line-height: 0.5;
+    }
+
+    &__title {
+        font-weight: bolder;
+        font-size: 0.9rem; 
+    }
+    &__subtitle {
+        font-size: .76rem; 
+        color: $omf-gray ; 
+    }
+}

@@ -1,3 +1,4 @@
+@use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
 
 /* Media queries based on common breakpoints here after : 
@@ -14,11 +15,13 @@
 
 @media (min-width: 1025px) {
 
+  // -------  HOME PAGE  -------
   .search {
     row-gap: 24px; 
 
     &__title {
-      font-size: 2.2rem; 
+      // font-size: 2.2rem; 
+      @include myfont (roboto , 2.2rem) ; 
     } 
 
     &__button {
@@ -84,6 +87,14 @@
 
       a:nth-child(3) { padding-left: 30px; }
     }
+  }
+
+  // ------- RESTAURANTS PAGES  -------
+
+  .menu {
+    max-width: 800px;
+
+    
   }
 }
 

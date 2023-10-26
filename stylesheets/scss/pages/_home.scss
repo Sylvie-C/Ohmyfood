@@ -26,11 +26,7 @@
     }
 
     &__button {
-        @include button01 ; 
-
-        &:hover {
-            @include button01-hover ; 
-        }
+        @include btn01 ; 
     }
 }
 
@@ -150,38 +146,8 @@
             }
 
             &__fav {
-                @include alignx-xycenter; 
-                position: relative; // for hearts icon position
-        
-                & > .heart-default { opacity: 1; }
-                & > .heart-like { opacity: 0; }
-        
-                &:hover {
-                    & > .heart-default {
-                        opacity: 0; 
-                        transition: opacity 300ms linear ; 
-                    }
-        
-                    & > .heart-like {
-                        animation: heart-visible 300ms linear ; 
-                        animation-fill-mode: forwards; 
-                    }
-                }
+                @include heart-icons ; 
             }
-        
-            &__fav .heart-default, .heart-like  {
-                width: 22px;
-        
-                position: absolute; 
-                right: 10px; 
-            }
-        
-            .heart-default { 
-                fill: transparent; 
-                stroke: black;  
-                stroke-width: 2;
-            }
-
         }
     }
 }

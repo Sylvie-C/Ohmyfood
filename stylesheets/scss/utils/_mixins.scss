@@ -1,11 +1,28 @@
 @use 'variables' as * ; 
 
-
-// -------  FORMAT  -------
+// -------  FONTS MIXINS  -------
 @mixin section-title {
     font-weight: bold; 
-    font-family: roboto , sans-serif; 
-    font-size: 20px;
+    @include myfont (roboto, 1.25rem) ; 
+}
+
+@mixin myfont ($fontname , $fontsize:1rem) {
+/*
+    mixin to generate set of properties for  customized font, 
+    based on font name and size defined by current Design System. 
+    parameters : 2 -> font name , font size.
+
+    fontsize must receive value+unit. 
+    fontnames just treat 'roboto' or 'shrikhand' design system fonts
+    (with serif or sans-serif). 
+*/
+    @if $fontname == 'roboto' {
+        font-family: #{$fontname} , sans-serif ; 
+    }@else if $fontname == 'shrikhand' {
+        font-family: #{$fontname} , serif ; 
+    }
+
+    $font-size: #{$fontsize} ; 
 }
 
 
@@ -32,7 +49,7 @@
 }
 
 // buttons
-@mixin button01 {
+@mixin btn01 {
     border: none; 
     border-radius: 100px;
     box-shadow: $bshadow ; 
@@ -51,14 +68,61 @@
     background: linear-gradient(180deg, $second-color -30%, $primary-color 110%);
     
     transition: all 300ms ease-in-out; 
+
+    &:hover {
+        filter: opacity(.8) ; 
+        box-shadow: $bshadow-dark ; 
+        cursor: pointer; 
+    }
 }
 
-@mixin button01-hover {
-    filter: opacity(.8) ;
-    box-shadow: $bshadow-dark ; 
 
-    cursor: pointer; 
+
+// icons heart container
+@mixin heart-icons {
+
+    @include alignx-xycenter; 
+    position: relative; // for hearts icon position
+
+    & > .heart-default { opacity: 1; }
+    & > .heart-like { opacity: 0; }
+
+    .heart-default , .heart-like {
+        width: 22px;
+        position: absolute; 
+        right: 10px; 
+    }
+
+    .heart-default { 
+        fill: transparent; 
+        stroke: black;  
+        stroke-width: 2;
+    }
+
+    &:hover {
+        & > .heart-default {
+            opacity: 0; 
+            transition: opacity 300ms linear ; 
+        }
+
+        & > .heart-like {
+            animation: heart-visible 300ms linear ; 
+            animation-fill-mode: forwards; 
+        }
+    }
+
 }
+
+/* menu cards : simple cards with Title, subtitle, price.
+Default display: none -> vertical alignment. */
+@mixin card02 {
+    background-color: white;
+    border-radius: 16px;
+    padding: 0 20px;
+    margin: 6px 0 ; 
+    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.1));
+}
+
 
 // -------  LAYOUT  -------
 @mixin alignx {
