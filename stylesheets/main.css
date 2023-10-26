@@ -298,7 +298,6 @@ body * a {
   width: 100%;
 }
 .resto-page .menu {
-  max-width: 800px;
   background: #f7f7f7;
   border-radius: 30px;
   position: absolute;
@@ -331,7 +330,6 @@ body * a {
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-
 .menu__header {
   display: flex;
   justify-content: space-between;
@@ -558,6 +556,9 @@ body * a {
   }
   .footer__linksblock a:nth-child(3) {
     padding-left: 30px;
+  }
+  .menu {
+    max-width: 800px;
   }
 }
 @media (min-width: 1440px) {

@@ -9,7 +9,6 @@
     }
 
     .menu {
-        max-width: 800px; 
 
         background: $omf-lightgray; 
         border-radius: 30px ; 
@@ -27,6 +26,9 @@
         &__btn {
             @include btn01; 
         }
+    }
+
+    .footer {
     }
 }
 

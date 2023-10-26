@@ -15,6 +15,7 @@
 
 @media (min-width: 1025px) {
 
+  // -------  HOME PAGE  -------
   .search {
     row-gap: 24px; 
 
@@ -86,6 +87,14 @@
 
       a:nth-child(3) { padding-left: 30px; }
     }
+  }
+
+  // ------- RESTAURANTS PAGES  -------
+
+  .menu {
+    max-width: 800px;
+
+    
   }
 }
 
