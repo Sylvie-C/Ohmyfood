@@ -27,10 +27,6 @@
 
     &__button {
         @include button01 ; 
-
-        &:hover {
-            @include button01-hover ; 
-        }
     }
 }
 
