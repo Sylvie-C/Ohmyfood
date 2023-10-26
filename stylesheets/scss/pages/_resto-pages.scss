@@ -8,7 +8,7 @@
         width: 100%; 
     }
 
-    &__menu {
+    .menu {
         max-width: 800px; 
 
         background: $omf-lightgray; 
@@ -18,9 +18,17 @@
         top: 250px; 
         width: 100%; 
         padding: 1.87rem 0.6rem ; 
+
+        &__btnfield {
+            width: 100%; 
+            @include alignx-xcenter; 
+        }
+
+        &__btn {
+            @include btn01; 
+        }
     }
 }
-
 
 .menu__header {
     display: flex; 
