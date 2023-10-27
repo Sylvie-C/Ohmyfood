@@ -1,6 +1,59 @@
 @charset "UTF-8";
 /* menu cards : simple cards with Title, subtitle, price.
 Default display: none -> vertical alignment. */
+@font-face {
+  font-family: shrikhand;
+  src: url("../fonts/shrikhand.ttf");
+}
+@font-face {
+  font-family: roboto;
+  src: url("../fonts/roboto.ttf");
+}
+body {
+  margin: 0;
+  animation: 3s noscroll linear;
+}
+
+body * {
+  box-sizing: border-box;
+  font-family: roboto;
+  font-size: 1rem;
+}
+body * .fa-solid {
+  width: 20px;
+  color: #808080;
+}
+body * a {
+  text-decoration: none;
+  color: black;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: black;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader-bckgd 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.loader__img {
+  width: 50px;
+  animation: loader-img 3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart-visible {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes noscroll {
   0% {
     overflow: hidden;
@@ -35,50 +88,20 @@ Default display: none -> vertical alignment. */
     opacity: 0;
   }
 }
-@font-face {
-  font-family: shrikhand;
-  src: url("../fonts/shrikhand.ttf");
+@keyframes slide01 {
+  /*  Slide from left and outside of the screen viewport to initial position. 
+      Hides initial position on page load with opacity 0 at first. 
+  */
+  from {
+    opacity: 0;
+    transform: translateX(-1500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(1);
+  }
 }
-@font-face {
-  font-family: roboto;
-  src: url("../fonts/roboto.ttf");
-}
-.body {
-  margin: 0;
-  animation: 3s noscroll linear;
-}
-
-body * {
-  box-sizing: border-box;
-  font-family: roboto;
-}
-body * .fa-solid {
-  width: 20px;
-  color: #808080;
-}
-body * a {
-  text-decoration: none;
-  color: black;
-}
-
-.loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: black;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: loader-bckgd 3s ease-in-out;
-  animation-fill-mode: forwards;
-}
-.loader__img {
-  width: 50px;
-  animation: loader-img 3s ease-out;
-  animation-fill-mode: forwards;
-}
-
+@keyframes slide02 {}
 .search {
   display: flex;
   flex-direction: column;
@@ -106,11 +129,10 @@ body * a {
   text-align: center;
   text-decoration: none;
   color: white;
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 8px 20px;
+  padding: 16px 20px;
   margin: 20px 0;
-  line-height: 2;
   background: linear-gradient(180deg, #FF79DA -30%, #9356DC 110%);
   transition: all 300ms ease-in-out;
 }
@@ -158,14 +180,6 @@ body * a {
   color: #9356DC;
 }
 
-@keyframes heart-visible {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .resto {
   margin: 40px 0 0 0;
   padding: 30px 10px;
@@ -276,6 +290,44 @@ body * a {
   width: 100%;
   padding: 12px;
 }
+.resto-page .menu__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.6rem;
+}
+.resto-page .menu__title {
+  font-size: 1.6rem;
+}
+.resto-page .menu__fav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.resto-page .menu__fav > .heart-default {
+  opacity: 1;
+}
+.resto-page .menu__fav > .heart-like {
+  opacity: 0;
+}
+.resto-page .menu__fav .heart-default, .resto-page .menu__fav .heart-like {
+  width: 22px;
+  position: absolute;
+  right: 10px;
+}
+.resto-page .menu__fav .heart-default {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 2;
+}
+.resto-page .menu__fav:hover > .heart-default {
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.resto-page .menu__fav:hover > .heart-like {
+  animation: heart-visible 300ms linear;
+  animation-fill-mode: forwards;
+}
 .resto-page .menu__btnfield {
   width: 100%;
   display: flex;
@@ -288,13 +340,13 @@ body * a {
   text-align: center;
   text-decoration: none;
   color: white;
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 8px 20px;
+  padding: 16px 20px;
   margin: 20px 0;
-  line-height: 2;
   background: linear-gradient(180deg, #FF79DA -30%, #9356DC 110%);
   transition: all 300ms ease-in-out;
+  width: 180px;
 }
 .resto-page .menu__btn:hover {
   filter: opacity(0.8);
@@ -302,59 +354,32 @@ body * a {
   cursor: pointer;
 }
 
-.menu__header {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.6rem;
+.dishblock__title {
+  margin: 20px 0 0 0;
+  color: #4d4d4d;
+  line-height: 30px;
+  border-bottom: 3px #99E2D0 solid;
+  width: 50px;
 }
-.menu__header .menu__title {
-  /*
-      mixin to generate set of properties for  customized font, 
-      based on font name and size defined by current Design System. 
-      parameters : 2 -> font name , font size.
-
-      fontsize must receive value+unit. 
-      fontnames just treat 'roboto' or 'shrikhand' design system fonts
-      (with serif or sans-serif). 
-  */
-  font-family: shrikhand, serif;
-}
-.menu__header .menu__fav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.menu__header .menu__fav > .heart-default {
-  opacity: 1;
-}
-.menu__header .menu__fav > .heart-like {
-  opacity: 0;
-}
-.menu__header .menu__fav .heart-default, .menu__header .menu__fav .heart-like {
-  width: 22px;
-  position: absolute;
-  right: 10px;
-}
-.menu__header .menu__fav .heart-default {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 2;
-}
-.menu__header .menu__fav:hover > .heart-default {
-  opacity: 0;
-  transition: opacity 300ms linear;
-}
-.menu__header .menu__fav:hover > .heart-like {
-  animation: heart-visible 300ms linear;
-  animation-fill-mode: forwards;
-}
-
 .dishblock button {
   width: 100%;
   border: none;
   background: none;
   cursor: pointer;
+}
+.dishblock__cardsblock * {
+  opacity: 0;
+  animation: slide01 1s;
+  animation-fill-mode: forwards;
+}
+.dishblock__cardsblock .dish01 {
+  animation-delay: 0.2s;
+}
+.dishblock__cardsblock .dish02 {
+  animation-delay: 0.4s;
+}
+.dishblock__cardsblock .dish03 {
+  animation-delay: 0.6s;
 }
 
 .card02 {
@@ -369,11 +394,15 @@ body * a {
 }
 .card02__text {
   text-align: left;
-  line-height: 0.5;
+  line-height: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .card02__title {
   font-weight: bolder;
-  font-size: 0.9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .card02__subtitle {
   font-size: 0.76rem;
@@ -524,7 +553,7 @@ body * a {
   .resto-page {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
   }
   .resto-page .pix {
     width: 100%;

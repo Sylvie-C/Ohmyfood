@@ -24,7 +24,20 @@
         width: 100%; 
         padding: 12px ; 
 
-        // margin: -20px; 
+        &__header {  
+            display: flex; 
+            justify-content: space-between; 
+        
+            margin: .6rem; 
+        }
+
+        &__title {
+            font-size: 1.6rem; 
+        }
+
+        &__fav {
+            @include heart-icons; 
+        }
 
         &__btnfield {
             width: 100%; 
@@ -33,26 +46,21 @@
 
         &__btn {
             @include btn01; 
+            width: 180px; 
         }
-        
     }
 }
 
-.menu__header {
-    display: flex; 
-    justify-content: space-between; 
-
-    margin: .6rem; 
-
-    .menu__title {
-        @include myfont ('shrikhand' , 12px); 
-    }
-    .menu__fav {
-        @include heart-icons; 
-    }
-}
 
 .dishblock {
+    &__title {
+        margin: 20px 0 0 0 ; 
+        color: $omf-gray; 
+        line-height: 30px; 
+
+        border-bottom: 3px $omf-lightgreen solid; 
+        width: 50px; 
+    }
     
     button {
         width: 100%; 
@@ -60,23 +68,42 @@
         background: none; 
         cursor: pointer; 
     }
+
+    &__cardsblock {
+        * { 
+            opacity: 0; // default position on page load = left: 0 -> invisible
+            animation: slide01 1s ; // default animation-timing-function ease-out ok
+            animation-fill-mode: forwards // freeze final state -> visible + position
+         }
+
+        .dish01 { animation-delay: .2s; }
+        .dish02 { animation-delay: .4s; }
+        .dish03 { animation-delay: .6s; }
+    }
 }
 
+//  Card for 1 plate 
 .card02 {
     @include card02 ; 
 
     display: flex; 
     justify-content: space-between; 
-    align-items:last baseline; 
+    align-items:last baseline;   // aligns price with text at bottom of card
 
     &__text {
         text-align: left; 
-        line-height: 0.5;
+        line-height: 0.8; 
+
+        overflow: hidden; 
+        white-space: nowrap; 
     }
 
     &__title {
         font-weight: bolder;
-        font-size: 0.9rem; 
+
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis; // dots if text cropped
     }
     &__subtitle {
         font-size: .76rem; 

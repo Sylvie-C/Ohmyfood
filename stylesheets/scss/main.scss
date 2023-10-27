@@ -3,6 +3,9 @@
 // import base styles for whole website
 @use 'base/normalize' ; 
 
+// import animations for whole website
+@use 'components/animations' ; 
+
 // import specific styles for home page
 @use 'pages/home' ; 
 
