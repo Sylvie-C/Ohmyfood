@@ -67,11 +67,10 @@
     // hide scroll bar during loader animation
     animation: 3s noscroll linear ; 
 
-    &__container {
-        position: static; 
+/*     &__container {
         top: 0; 
         left: 0; 
-    }
+    } */
 }
 
 body * {
@@ -110,7 +109,7 @@ body * {
     &__img {
         width: 50px; 
         animation: loader-img 3s ease-out; 
-        animation-fill-mode: forwards; // loader img must remain invisible (opacity)
+        animation-fill-mode: forwards; // loader img remain invisible (opacity) end of animation
     }
 }
 

@@ -46,11 +46,10 @@ Default display: none -> vertical alignment. */
 .body {
   margin: 0;
   animation: 3s noscroll linear;
-}
-.body__container {
-  position: static;
-  top: 0;
-  left: 0;
+  /*     &__container {
+          top: 0; 
+          left: 0; 
+      } */
 }
 
 body * {
@@ -263,16 +262,21 @@ body * a {
   animation-fill-mode: forwards;
 }
 
-.resto-page .picture {
-  background-image: url("../images/restaurants/palette_du_gout.jpg");
-  background-size: cover;
+.resto-page .pix {
   width: 100%;
-  height: 250px;
+  height: 210px;
+  position: relative;
+  z-index: -10;
+}
+.resto-page .pix img {
+  object-fit: cover;
+  object-position: 0 8%;
+  width: 100%;
+  height: 260px;
 }
 .resto-page .menu {
   background: #f7f7f7;
   border-radius: 30px;
-  margin-top: -40px;
   width: 100%;
   padding: 12px;
 }
@@ -300,10 +304,6 @@ body * a {
   filter: opacity(0.8);
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
   cursor: pointer;
-}
-.resto-page .footer {
-  position: absolute;
-  bottom: 0;
 }
 
 .menu__header {
@@ -391,11 +391,6 @@ body * a {
   padding: 18px 0 6px 0;
   margin: 0;
   box-shadow: 0 2px 5px #b8b8b8;
-  position: relative;
-  z-index: 2;
-}
-.header__title--noshadow {
-  z-index: 1;
 }
 .header__location {
   display: flex;
@@ -424,9 +419,8 @@ body * a {
 }
 .header__link {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 3;
+  margin-left: 14px;
+  margin-top: 14px;
 }
 
 .footer {
@@ -452,7 +446,7 @@ body * a {
 .footer__linksblock .fa-solid {
   color: white;
 }
-.footer__linksblock a:hover {
+.footer__linksblock a:active {
   text-decoration: underline;
 }
 
@@ -464,6 +458,9 @@ body * a {
     • Extra large screens, TV – 1201px, and more.
 */
 @media (min-width: 1025px) {
+  body .body__container {
+    max-width: 1440px;
+  }
   .search {
     row-gap: 24px;
   }
@@ -525,16 +522,27 @@ body * a {
   .footer__linksblock a:nth-child(3) {
     padding-left: 30px;
   }
-  .menu {
-    max-width: 800px;
+  .footer__linksblock a:hover {
+    text-decoration: underline;
   }
-}
-@media (min-width: 1440px) {
-  .body {
+  .resto-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-  .body__container {
-    max-width: 1440px;
+  .resto-page .pix {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    z-index: -10;
+  }
+  .resto-page .pix img {
+    object-fit: cover;
+    object-position: 0 60%;
+    width: 100%;
+    height: 300px;
+  }
+  .resto-page .menu {
+    width: 1000px;
   }
 }/*# sourceMappingURL=main.css.map */

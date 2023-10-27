@@ -12,15 +12,8 @@
         margin: 0; 
 
         box-shadow: 0 2px 5px #b8b8b8;
-        position: relative; 
-        z-index: 2;
     }
 
-    &__title--noshadow {
-        z-index: 1; // for restaurants pages
-    }
-
- 
     &__location {
         @include alignx-xycenter; 
         height: 44px; 
@@ -54,10 +47,8 @@
     // for restaurants pages
     &__link {
         position: absolute; 
-        top: 14px; 
-        left: 14px; 
-
-        z-index: 3; 
+        margin-left: 14px; 
+        margin-top: 14px; 
     }
 
 

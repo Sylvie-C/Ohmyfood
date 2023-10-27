@@ -18,7 +18,7 @@
      &__linksblock {
         font-size: .84rem;
         .fa-solid { color: white; }
-        a:hover { text-decoration: underline; }
+        a:active { text-decoration: underline; }
 
         @include aligny; 
         row-gap: 4px; 
