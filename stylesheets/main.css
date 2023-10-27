@@ -553,7 +553,7 @@ body * a {
   .resto-page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
   }
   .resto-page .pix {
     width: 100%;
