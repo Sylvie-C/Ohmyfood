@@ -39,6 +39,17 @@
 
         &__fav {
             @include heart-icons; 
+            &:hover {  // not clickable for this project first version
+                & > .heart-default {
+                    opacity: 0; 
+                    transition: opacity 300ms linear ; 
+                }
+        
+                & > .heart-like {
+                    animation: heart-visible 300ms linear ; 
+                    animation-fill-mode: forwards; 
+                }
+            }
         }
 
         &__btnfield {
@@ -73,6 +84,9 @@
     }
 
     &__cardsblock {
+    /*  Plates cards arrive from left of the screen on page load, 
+        smoothly and with delay between them. 
+    */
         * { 
             opacity: 0; // default position on page load = left: 0 -> invisible
             animation: slide01 1s ; // default animation-timing-function ease-out ok

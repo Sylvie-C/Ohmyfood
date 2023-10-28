@@ -32,6 +32,11 @@
 
     &__button {
       margin: 0; 
+      &:hover {
+        filter: opacity(.8) ; 
+        box-shadow: $bshadow-dark ; 
+        cursor: pointer; 
+      }
     }
   }
 
@@ -46,6 +51,10 @@
 
       &__card{
         width: 26%; 
+
+        &:hover {
+          .fa-solid { color: $primary-color ; }
+        }
       }
     }
     
@@ -63,6 +72,11 @@
 
       .card {
         width: 460px; 
+
+        &__fav {
+          /* animation on hover only for this first project version 
+          -> see mobile default responsive*/
+        }
 
         .pix01 { object-position: 0 70%; }
         .pix02 { object-position: 0 58%; }
@@ -122,6 +136,14 @@
 
     .menu { 
       width: 1000px; 
+
+      &__btn {
+        &:hover {
+          filter: opacity(.8) ; 
+          box-shadow: $bshadow-dark ; 
+          cursor: pointer; 
+        }
+      }
     }
   }
 }
