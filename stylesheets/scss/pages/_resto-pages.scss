@@ -1,21 +1,45 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
+@use '../base/normalize' ; 
 
 .resto-page { 
-
-    .picture {
-        background-image: url('../images/restaurants/palette_du_gout.jpg'); 
-        background-size: cover; 
+    .pix {
         width: 100%; 
-        height: 250px;   
+        height: 210px; 
+
+        // for menu over picture
+        position: relative; 
+        z-index: -10; 
+        
+        img {
+            object-fit: cover;
+            object-position: 0 8%; 
+            width: 100%; 
+            height: 260px;
+        }
     }
 
     .menu {
         background: $omf-lightgray; 
         border-radius: 30px ; 
-        margin-top: -40px;
         width: 100%; 
         padding: 12px ; 
+
+        &__header {  
+            display: flex; 
+            justify-content: space-between; 
+        
+            margin: .6rem; 
+        }
+
+        &__title {
+            font-size: 1.6rem; 
+            font-family: shrikhand; 
+        }
+
+        &__fav {
+            @include heart-icons; 
+        }
 
         &__btnfield {
             width: 100%; 
@@ -24,57 +48,113 @@
 
         &__btn {
             @include btn01; 
+            width: 180px; 
         }
     }
-
-    .footer {
-        position: absolute; 
-        bottom: 0; 
-    }
 }
 
-.menu__header {
-    display: flex; 
-    justify-content: space-between; 
-
-    margin: .6rem; 
-
-    .menu__title {
-        @include myfont ('shrikhand' , 12px); 
-    }
-    .menu__fav {
-        @include heart-icons; 
-    }
-}
 
 .dishblock {
+    &__title {
+        margin: 20px 0 0 0 ; 
+        color: $omf-gray; 
+        line-height: 30px; 
+
+        border-bottom: 3px $omf-lightgreen solid; 
+        width: 50px; 
+    }
     
-    button {
+    // HTML standards : <a> or <button> tag for future onclick event (add dish by user to menu kart)
+    button {  
         width: 100%; 
         border:  none; 
         background: none; 
         cursor: pointer; 
     }
+
+    &__cardsblock {
+        * { 
+            opacity: 0; // default position on page load = left: 0 -> invisible
+            animation: slide01 1s ; // default animation-timing-function ease-out ok
+            animation-fill-mode: forwards // freeze final state -> visible + position
+         }
+
+        .dish01 { animation-delay: .2s; }
+        .dish02 { animation-delay: .4s; }
+        .dish03 { animation-delay: .6s; }
+    }
 }
 
+//  Card for 1 plate 
 .card02 {
     @include card02 ; 
 
-    display: flex; 
-    justify-content: space-between; 
-    align-items:last baseline; 
+    @include alignx ; 
 
-    &__text {
-        text-align: left; 
-        line-height: 0.5;
+    &:hover > &__check { 
+        transition: all 1s ease-in-out ;
+        width: 20%; 
     }
 
-    &__title {
-        font-weight: bolder;
-        font-size: 0.9rem; 
+    &:hover > &__info {
+        transition: all 1s ease-in-out; 
+        width: 80%; 
     }
-    &__subtitle {
-        font-size: .76rem; 
-        color: $omf-gray ; 
+
+    &__info {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-end; // for price to be aligned with text at bottom of card
+
+        width: 100% ;  // default width before animation
+        transition: all 1s ease-in-out ; 
+
+        .card02__text {
+            width: 100%;
+            height: 100%; // to fit card height
+    
+            text-align: left; 
+            margin-left: .75rem; 
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+        }
+        .card02__title {
+            font-size: 1.1rem; 
+            font-weight: bolder;
+            margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis; // dots if text cropped
+        }
+        .card02__subtitle {
+            font-size: .9rem; 
+            color: $omf-gray ; 
+    
+            margin-top: 0; // default margins top-bottom for <p> tags = 1rem
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis; // dots if text cropped
+        }
+        .card02__price { 
+            margin: .75rem; 
+        } // default margins top-bottom for <p> tags = 1rem
     }
+
+    &__check {
+        width: 0%; // default width before animation
+        transition: all 1s ease-in-out; 
+
+        height: 100%; 
+        border-radius: 0 16px 16px 0; 
+        background: $omf-lightgreen ; 
+
+        @include alignx-xycenter; 
+
+        .fa-check { color: white; }
+    }
+
 }
+

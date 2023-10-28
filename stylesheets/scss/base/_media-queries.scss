@@ -9,11 +9,16 @@
     • Extra large screens, TV – 1201px, and more.
 */
 
-@media (min-width: 481px) {
+@media (min-width: 768px) {
 
 }
 
 @media (min-width: 1025px) {
+  body { 
+    .body__container{ 
+      max-width: 1440px; // max-width to prevent stretch of pages on very large screens. 
+    }
+  }
 
   // -------  HOME PAGE  -------
   .search {
@@ -87,25 +92,39 @@
       .fa-xs { font-size: 13px; }
 
       a:nth-child(3) { padding-left: 30px; }
+
+      a:hover { text-decoration: underline; }
     }
   }
 
   // ------- RESTAURANTS PAGES  -------
 
-  .menu {
-    max-width: 800px;
-
-    
-  }
-}
-
-@media (min-width: 1440px) {
-  .body {
+  .resto-page {
     display: flex; 
-    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
 
-    &__container {
-      max-width: 1440px; // max-width to prevent stretch of pages on very large screens.
+    .pix {
+      width: 100%; 
+      height: 280px; 
+
+      // for menu over picture
+      position: relative; 
+      z-index: -10; 
+      
+      img {
+          object-fit:cover;
+          object-position: 0 60%; 
+          width: 100%; 
+          height: 300px; 
+      }
+    }
+
+    .menu { 
+      width: 1000px; 
     }
   }
 }
+
+
+

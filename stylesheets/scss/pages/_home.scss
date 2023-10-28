@@ -1,5 +1,6 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
+@use '../components/animations' ; 
 
 
 // -------  SEARCH SECTION  -------
@@ -81,12 +82,6 @@
 
 
 // ---------  RESTAURANTS SECTION  ---------
-
-// Keyframes for hearts empty-filled animation
-@keyframes heart-visible {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
 
 .resto {
     margin: 40px 0 0 0; 
