@@ -11,6 +11,14 @@
 
 @media (min-width: 768px) {
 
+  .resto {
+    // pictures framing
+    .pix01 { object-position: 0 10%; }
+    .pix02 { object-position: 0 61.5%; }
+    .pix03 { object-position: 0 100%; }
+    .pix04 { object-position: 0 95%; }
+  }
+
 }
 
 @media (min-width: 1025px) {
