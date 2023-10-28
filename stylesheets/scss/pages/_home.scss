@@ -28,6 +28,11 @@
 
     &__button {
         @include btn01 ; 
+        &:active {
+            filter: opacity(.8) ; 
+            box-shadow: $bshadow-dark ; 
+            cursor: pointer; 
+        }
     }
 }
 
@@ -74,7 +79,7 @@
             }
         }
 
-        &__card:hover {
+        &__card:active {
             .fa-solid { color: $primary-color ; }
         }
     }
