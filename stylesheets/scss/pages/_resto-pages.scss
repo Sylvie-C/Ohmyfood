@@ -62,7 +62,8 @@
         width: 50px; 
     }
     
-    button {
+    // HTML standards : <a> or <button> tag for future onclick event (add dish by user to menu kart)
+    button {  
         width: 100%; 
         border:  none; 
         background: none; 
@@ -87,27 +88,50 @@
     @include card02 ; 
 
     display: flex; 
-    justify-content: space-between; 
-    align-items:last baseline;   // aligns price with text at bottom of card
+    align-items: flex-end; // for price to be aligned with text at bottom of card
 
     &__text {
+        height: 100%; // to fit card height
+
         text-align: left; 
-        line-height: 0.8; 
+        margin-left: .75rem; 
 
         overflow: hidden; 
         white-space: nowrap; 
     }
 
     &__title {
+        font-size: 1.1rem; 
         font-weight: bolder;
+        margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
 
         overflow: hidden; 
         white-space: nowrap; 
         text-overflow: ellipsis; // dots if text cropped
     }
     &__subtitle {
-        font-size: .76rem; 
+        font-size: .9rem; 
         color: $omf-gray ; 
+
+        margin-top: 0; // default margins top-bottom for <p> tags = 1rem
+
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis; // dots if text cropped
+    }
+    &__price { 
+        margin: .75rem; 
+    } // default margins top-bottom for <p> tags = 1rem
+
+    &:hover {
+
     }
 }
 
+.check {
+    width: 70px; 
+    height: 100%; 
+    border-radius: 0 16px 16px 0; 
+    background: aqua; 
+    margin-left: 0; 
+}

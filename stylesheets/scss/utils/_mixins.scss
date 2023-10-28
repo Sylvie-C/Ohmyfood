@@ -108,12 +108,12 @@
 
 }
 
-/* menu cards : simple cards with Title, subtitle, price.
-Default display: none -> vertical alignment. */
+// menu cards : simple cards with Title, subtitle, price.
 @mixin card02 {
+    overflow: hidden; 
+    height: 70px; 
     background-color: white;
     border-radius: 16px;
-    padding: 0 20px;
     margin: 6px 0 ; 
     filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.1));
 }
