@@ -637,9 +637,11 @@ body * a {
   .resto-page .menu {
     width: 1000px;
   }
+
   .resto-page .menu__btn:hover {
     filter: opacity(0.8);
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
 }/*# sourceMappingURL=main.css.map */
+
