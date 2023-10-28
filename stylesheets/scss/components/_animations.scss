@@ -12,14 +12,9 @@
 
 // no scroll bar during loader animation (body)
 @keyframes noscroll {
-    0% {
-        overflow: hidden; 
-    }
-
-    98% {overflow: hidden; }
-    100% {
-        overflow: scroll; 
-    }
+    0% { overflow: hidden; }
+    98% {overflow: hidden; }  // to make scroll bar appear just before end of animation
+    100% { overflow: scroll; }
 }
 
 // animation loader
@@ -27,8 +22,8 @@
     // Loader background starts to fade out in the end of animation
     95% { 
         background-color: rgb(0,0,0,1); 
-
-        z-index: 10;}
+        z-index: 10;
+    }
     100% { 
         background-color: rgba(0,0,0,0) ; 
 
@@ -56,7 +51,7 @@
 */
     from {
         opacity: 0; 
-        transform: translateX(-1500px); 
+        transform: translateX(-100%); 
     }
     to {
         opacity: 1; 
@@ -64,9 +59,3 @@
     }
 }
 
-@keyframes slide02 {
-//  Slide from right for check button
-    
-
-
-}

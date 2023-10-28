@@ -92,14 +92,13 @@ body * a {
   */
   from {
     opacity: 0;
-    transform: translateX(-1500px);
+    transform: translateX(-100%);
   }
   to {
     opacity: 1;
     transform: translateX(1);
   }
 }
-@keyframes slide02 {}
 .search {
   display: flex;
   flex-direction: column;
@@ -295,6 +294,7 @@ body * a {
 }
 .resto-page .menu__title {
   font-size: 1.6rem;
+  font-family: shrikhand;
 }
 .resto-page .menu__fav {
   display: flex;
@@ -382,22 +382,29 @@ body * a {
 
 .card02 {
   overflow: hidden;
+  width: 100%;
   height: 70px;
   background-color: white;
   border-radius: 16px;
   margin: 6px 0;
   filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.1));
   display: flex;
-  align-items: flex-end;
 }
-.card02__text {
+.card02__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+.card02__info .card02__text {
+  width: 100%;
   height: 100%;
   text-align: left;
   margin-left: 0.75rem;
   overflow: hidden;
   white-space: nowrap;
 }
-.card02__title {
+.card02__info .card02__title {
   font-size: 1.1rem;
   font-weight: bolder;
   margin-bottom: 0.18rem;
@@ -405,7 +412,7 @@ body * a {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.card02__subtitle {
+.card02__info .card02__subtitle {
   font-size: 0.9rem;
   color: #4d4d4d;
   margin-top: 0;
@@ -413,15 +420,25 @@ body * a {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.card02__price {
+.card02__info .card02__price {
   margin: 0.75rem;
 }
-.check {
-  width: 70px;
+.card02__check {
+  width: 0px;
   height: 100%;
   border-radius: 0 16px 16px 0;
-  background: aqua;
-  margin-left: 0;
+  background: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: left;
+  transition: all 0.4s ease-out;
+}
+.card02__check .fa-check {
+  color: white;
+}
+.card02:hover > .card02__check {
+  width: 70px;
 }
 
 .header__title {

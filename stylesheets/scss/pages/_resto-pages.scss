@@ -1,5 +1,6 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
+@use '../base/normalize' ; 
 
 .resto-page { 
     .pix {
@@ -33,6 +34,7 @@
 
         &__title {
             font-size: 1.6rem; 
+            font-family: shrikhand; 
         }
 
         &__fav {
@@ -87,51 +89,69 @@
 .card02 {
     @include card02 ; 
 
-    display: flex; 
-    align-items: flex-end; // for price to be aligned with text at bottom of card
+    @include alignx ; 
 
-    &__text {
-        height: 100%; // to fit card height
+    &__info {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-end; // for price to be aligned with text at bottom of card
 
-        text-align: left; 
-        margin-left: .75rem; 
+        width: 100%; 
 
-        overflow: hidden; 
-        white-space: nowrap; 
+        .card02__text {
+            width: 100%;
+            height: 100%; // to fit card height
+    
+            text-align: left; 
+            margin-left: .75rem; 
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+        }
+        .card02__title {
+            font-size: 1.1rem; 
+            font-weight: bolder;
+            margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis; // dots if text cropped
+        }
+        .card02__subtitle {
+            font-size: .9rem; 
+            color: $omf-gray ; 
+    
+            margin-top: 0; // default margins top-bottom for <p> tags = 1rem
+    
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis; // dots if text cropped
+        }
+        .card02__price { 
+            margin: .75rem; 
+        } // default margins top-bottom for <p> tags = 1rem
+
+
     }
 
-    &__title {
-        font-size: 1.1rem; 
-        font-weight: bolder;
-        margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
+    &__check {
+        width: 0px; 
+        height: 100%; 
+        border-radius: 0 16px 16px 0; 
 
-        overflow: hidden; 
-        white-space: nowrap; 
-        text-overflow: ellipsis; // dots if text cropped
+        background: $omf-lightgreen; 
+
+        @include alignx-xycenter; 
+
+        transform-origin: left; 
+        transition: all .4s ease-out ; 
+
+        .fa-check {
+            color: white; }
     }
-    &__subtitle {
-        font-size: .9rem; 
-        color: $omf-gray ; 
 
-        margin-top: 0; // default margins top-bottom for <p> tags = 1rem
-
-        overflow: hidden; 
-        white-space: nowrap; 
-        text-overflow: ellipsis; // dots if text cropped
-    }
-    &__price { 
-        margin: .75rem; 
-    } // default margins top-bottom for <p> tags = 1rem
-
-    &:hover {
-
+    &:hover > &__check {
+        width: 70px; 
     }
 }
 
-.check {
-    width: 70px; 
-    height: 100%; 
-    border-radius: 0 16px 16px 0; 
-    background: aqua; 
-    margin-left: 0; 
-}
