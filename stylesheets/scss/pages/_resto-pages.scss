@@ -91,12 +91,23 @@
 
     @include alignx ; 
 
+    &:hover > &__check { 
+        transition: all 1s ease-in-out ;
+        width: 20%; 
+    }
+
+    &:hover > &__info {
+        transition: all 1s ease-in-out; 
+        width: 80%; 
+    }
+
     &__info {
         display: flex; 
         justify-content: space-between; 
         align-items: flex-end; // for price to be aligned with text at bottom of card
 
-        width: 100%; 
+        width: 100% ;  // default width before animation
+        transition: all 1s ease-in-out ; 
 
         .card02__text {
             width: 100%;
@@ -130,28 +141,20 @@
         .card02__price { 
             margin: .75rem; 
         } // default margins top-bottom for <p> tags = 1rem
-
-
     }
 
     &__check {
-        width: 0px; 
+        width: 0%; // default width before animation
+        transition: all 1s ease-in-out; 
+
         height: 100%; 
         border-radius: 0 16px 16px 0; 
-
-        background: $omf-lightgreen; 
+        background: $omf-lightgreen ; 
 
         @include alignx-xycenter; 
 
-        transform-origin: left; 
-        transition: all .4s ease-out ; 
-
-        .fa-check {
-            color: white; }
+        .fa-check { color: white; }
     }
 
-    &:hover > &__check {
-        width: 70px; 
-    }
 }
 

@@ -390,11 +390,20 @@ body * a {
   filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.1));
   display: flex;
 }
+.card02:hover > .card02__check {
+  transition: all 1s ease-in-out;
+  width: 20%;
+}
+.card02:hover > .card02__info {
+  transition: all 1s ease-in-out;
+  width: 80%;
+}
 .card02__info {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  transition: all 1s ease-in-out;
 }
 .card02__info .card02__text {
   width: 100%;
@@ -424,21 +433,17 @@ body * a {
   margin: 0.75rem;
 }
 .card02__check {
-  width: 0px;
+  width: 0%;
+  transition: all 1s ease-in-out;
   height: 100%;
   border-radius: 0 16px 16px 0;
   background: #99e2d0;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-origin: left;
-  transition: all 0.4s ease-out;
 }
 .card02__check .fa-check {
   color: white;
-}
-.card02:hover > .card02__check {
-  width: 70px;
 }
 
 .header__title {
