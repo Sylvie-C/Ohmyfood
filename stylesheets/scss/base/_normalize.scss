@@ -20,8 +20,10 @@
 
 body { 
     margin: 0; 
+}
 
-    // hide scroll bar during loader animation
+.noscroll {
+    // hide scroll bar during loader animation, on home page only
     animation: 3s noscroll linear ; 
 }
 

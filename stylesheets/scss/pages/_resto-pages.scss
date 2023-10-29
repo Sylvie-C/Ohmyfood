@@ -39,7 +39,7 @@
 
         &__fav {
             @include heart-icons; 
-            &:hover {  // not clickable for this project first version
+            &:hover {  // not clickable for this project (first version)
                 & > .heart-default {
                     opacity: 0; 
                     transition: opacity 300ms linear ; 

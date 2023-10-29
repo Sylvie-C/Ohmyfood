@@ -54,15 +54,13 @@
     }
 }
 
-// icons heart container
+// Heart icons : mixin must be placed in their container
 @mixin heart-icons {
 
     @include alignx-xycenter; 
     position: relative; // for hearts icon position
 
-    & > .heart-default { opacity: 1; }
-    & > .heart-like { opacity: 0; }
-
+    // Default
     .heart-default , .heart-like {
         width: 22px;
         position: absolute; 
@@ -73,17 +71,26 @@
         fill: transparent; 
         stroke: black;  
         stroke-width: 2;
+        opacity: 1 ; 
+        transition: opacity 300ms linear; 
     }
 
-    &:hover {  // not clickable for this project first version
+    .heart-like {
+        opacity: 0 ;
+        transition: opacity 300ms linear; 
+    }
+
+    &:hover {  // not clickable for this project (first version)
         & > .heart-default {
+            cursor: pointer; 
             opacity: 0; 
             transition: opacity 300ms linear ; 
         }
 
         & > .heart-like {
-            animation: heart-visible 300ms linear ; 
-            animation-fill-mode: forwards; 
+            cursor: pointer; 
+            opacity: 1; 
+            transition: opacity 300ms linear ; 
         }
     }
 }
