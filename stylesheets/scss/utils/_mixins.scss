@@ -6,25 +6,6 @@
     font-size: 1.25rem; 
 }
 
-@mixin myfont ($fontname , $fontsize:1rem) {
-/*
-    mixin to generate set of properties for  customized font, 
-    based on font name and size defined by current Design System. 
-    parameters : 2 -> font name , font size.
-
-    fontsize must receive value+unit. 
-    fontnames just treat 'roboto' or 'shrikhand' design system fonts
-    (with serif or sans-serif). 
-*/
-    @if $fontname == 'roboto' {
-        font-family: #{$fontname} , sans-serif ; 
-    }@else if $fontname == 'shrikhand' {
-        font-family: #{$fontname} , serif ; 
-    }
-
-    $font-size: #{$fontsize} ; 
-}
-
 // -------  COMPONENTS  -------
 // icons
 @mixin icon { 
@@ -103,6 +84,52 @@
         & > .heart-like {
             animation: heart-visible 300ms linear ; 
             animation-fill-mode: forwards; 
+        }
+    }
+}
+
+// home page card : picture, title, subtitle, heart icon (like)
+@mixin card {
+    .card {
+        background-color: white; 
+        border-radius: 15px;
+        padding: 2px;
+        filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    
+        &__pix {
+            object-fit: cover;
+    
+            width: 100%; 
+            height: 148px; 
+        
+            border-top-left-radius: 15px; 
+            border-top-right-radius: 15px;
+        }
+    
+        // pictures framing
+        .pix01 { object-position: 0 100%; }
+        .pix02 { object-position: 0 61.5%; }
+        .pix03 { object-position: 0 100%; }
+        .pix04 { object-position: 0 95%; }
+    
+        &__info {  
+            display: flex; 
+            justify-content: space-between; 
+    
+            padding: 14px 10px ; 
+        }
+
+        &__info * {
+            margin: 0 ; 
+        }
+
+        &__subtitle {
+            font-weight: 100; 
+            color: $omf-gray; 
+        }
+
+        &__fav {
+            @include heart-icons ; 
         }
     }
 }

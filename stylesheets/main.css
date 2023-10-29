@@ -537,18 +537,20 @@ body * a {
     • Desktops, large screens – 1025px — 1200px.
     • Extra large screens, TV – 1201px, and more.
 */
-@media (min-width: 768px) {
-  .resto .pix01 {
-    object-position: 0 10%;
-  }
-  .resto .pix02 {
-    object-position: 0 61.5%;
-  }
-  .resto .pix03 {
-    object-position: 0 100%;
-  }
-  .resto .pix04 {
-    object-position: 0 95%;
+@media (min-width: 481px) {
+  /*   .card {
+      &__pix {
+          object-fit: cover;
+      }
+    } */
+}
+@media (min-width: 769px) {
+  .resto__cardsblock {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 44px;
+    column-gap: 90px;
   }
 }
 @media (min-width: 1025px) {

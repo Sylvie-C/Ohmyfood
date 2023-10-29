@@ -9,14 +9,40 @@
     • Extra large screens, TV – 1201px, and more.
 */
 
-@media (min-width: 768px) {
+@media (min-width: 481px){
+/*   .card {
+    &__pix {
+        object-fit: cover;
+    }
+  } */
+} 
+
+@media (min-width: 769px) {
 
   .resto {
-    // pictures framing
-    .pix01 { object-position: 0 10%; }
-    .pix02 { object-position: 0 61.5%; }
-    .pix03 { object-position: 0 100%; }
-    .pix04 { object-position: 0 95%; }
+
+    &__cardsblock {
+      flex-direction: row;  // default responsive : flex column
+      justify-content: center; 
+      flex-wrap: wrap; 
+
+      row-gap: 44px;
+      column-gap: 90px; 
+
+//       .card {
+//         width: 460px; 
+
+//         &__fav {
+//           /* animation on hover only for this first project version 
+//           -> see mobile default responsive*/
+//         }
+
+//         .pix01 { object-position: 0 70%; }
+//         .pix02 { object-position: 0 58%; }
+//         .pix03 { object-position: 0 70%; }
+//         .pix04 { object-position: 0 70%; }
+//       }
+    }
   }
 
 }

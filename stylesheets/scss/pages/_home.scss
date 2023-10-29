@@ -107,48 +107,7 @@
         @include aligny; 
         row-gap: 14px;
 
-        .card {
-            background-color: white; 
-            border-radius: 15px;
-            padding: 2px;
-            filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-        
-            &__pix {
-                object-fit: cover;
-        
-                width: 100%; 
-                height: 148px; 
-            
-                border-top-left-radius: 15px; 
-                border-top-right-radius: 15px;
-            }
-        
-            // pictures framing
-            .pix01 { object-position: 0 100%; }
-            .pix02 { object-position: 0 61.5%; }
-            .pix03 { object-position: 0 100%; }
-            .pix04 { object-position: 0 95%; }
-        
-            &__info {  
-                display: flex; 
-                justify-content: space-between; 
-        
-                padding: 14px 10px ; 
-            }
-
-            &__info * {
-                margin: 0 ; 
-            }
-
-            &__subtitle {
-                font-weight: 100; 
-                color: $omf-gray; 
-            }
-
-            &__fav {
-                @include heart-icons ; 
-            }
-        }
+        @include card; 
     }
 }
 
