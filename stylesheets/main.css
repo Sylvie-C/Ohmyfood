@@ -389,7 +389,6 @@ body * a {
 }
 .dishblock__cardsblock * {
   animation: slide01 1s;
-  animation-fill-mode: forwards;
 }
 .dishblock__cardsblock .dish01 {
   animation-delay: 100ms;
@@ -408,6 +407,18 @@ body * a {
 }
 .dishblock__cardsblock .dish06 {
   animation-delay: 600ms;
+}
+.dishblock__cardsblock .dish07 {
+  animation-delay: 700ms;
+}
+.dishblock__cardsblock .dish08 {
+  animation-delay: 800ms;
+}
+.dishblock__cardsblock .dish09 {
+  animation-delay: 900ms;
+}
+.dishblock__cardsblock .dish10 {
+  animation-delay: 1000ms;
 }
 
 .card02 {

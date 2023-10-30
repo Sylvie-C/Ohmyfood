@@ -92,12 +92,11 @@
         smoothly and with delay between them. 
     */
         * { 
-            animation: slide01 1s ; // default animation-timing-function ease-out ok
-            animation-fill-mode: forwards // freeze final state -> visible + position
+            animation: slide01 1s ; 
          }
 
-        // mixin to define delay of *100ms increment for each element in list
-        @include cardsDelay ('.dish01' , '.dish02' , '.dish03' , '.dish04' , '.dish05' , '.dish06' ) ; 
+        // mixin to define delay of *100ms increment for each element in list -> for animation of 1s, 10 cards possible
+        @include cardsDelay ('.dish01' , '.dish02' , '.dish03' , '.dish04' , '.dish05' , '.dish06' , '.dish07' , '.dish08' , '.dish09' , '.dish10' ) ; 
     }
 }
 
