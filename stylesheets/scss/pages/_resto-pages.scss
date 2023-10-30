@@ -93,9 +93,8 @@
             animation-fill-mode: forwards // freeze final state -> visible + position
          }
 
-        .dish01 { animation-delay: .2s; }
-        .dish02 { animation-delay: .4s; }
-        .dish03 { animation-delay: .6s; }
+        // mixin to define delay of *100ms increment for each element in list
+        @include cardsDelay ('.dish01' , '.dish02' , '.dish03' , '.dish04' , '.dish05' , '.dish06' ) ; 
     }
 }
 
