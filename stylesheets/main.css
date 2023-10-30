@@ -9,6 +9,9 @@
 }
 body {
   margin: 0;
+}
+
+.noscroll {
   animation: 3s noscroll linear;
 }
 
@@ -44,14 +47,10 @@ body * a {
   animation-fill-mode: forwards;
 }
 
-@keyframes heart-visible {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* 
+    Keyframes animations in this file. 
+    Other animations like transitions can be found in _mixins.scss file. 
+*/
 @keyframes noscroll {
   0% {
     overflow: hidden;
@@ -249,12 +248,6 @@ body * a {
   align-items: center;
   position: relative;
 }
-.resto__cardsblock .card__fav > .heart-default {
-  opacity: 1;
-}
-.resto__cardsblock .card__fav > .heart-like {
-  opacity: 0;
-}
 .resto__cardsblock .card__fav .heart-default, .resto__cardsblock .card__fav .heart-like {
   width: 22px;
   position: absolute;
@@ -264,14 +257,22 @@ body * a {
   fill: transparent;
   stroke: black;
   stroke-width: 2;
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+.resto__cardsblock .card__fav .heart-like {
+  opacity: 0;
+  transition: opacity 300ms linear;
 }
 .resto__cardsblock .card__fav:hover > .heart-default {
+  cursor: pointer;
   opacity: 0;
   transition: opacity 300ms linear;
 }
 .resto__cardsblock .card__fav:hover > .heart-like {
-  animation: heart-visible 300ms linear;
-  animation-fill-mode: forwards;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms linear;
 }
 
 .resto-page .pix {
@@ -307,12 +308,6 @@ body * a {
   align-items: center;
   position: relative;
 }
-.resto-page .menu__fav > .heart-default {
-  opacity: 1;
-}
-.resto-page .menu__fav > .heart-like {
-  opacity: 0;
-}
 .resto-page .menu__fav .heart-default, .resto-page .menu__fav .heart-like {
   width: 22px;
   position: absolute;
@@ -322,14 +317,22 @@ body * a {
   fill: transparent;
   stroke: black;
   stroke-width: 2;
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+.resto-page .menu__fav .heart-like {
+  opacity: 0;
+  transition: opacity 300ms linear;
 }
 .resto-page .menu__fav:hover > .heart-default {
+  cursor: pointer;
   opacity: 0;
   transition: opacity 300ms linear;
 }
 .resto-page .menu__fav:hover > .heart-like {
-  animation: heart-visible 300ms linear;
-  animation-fill-mode: forwards;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 300ms linear;
 }
 .resto-page .menu__fav:hover > .heart-default {
   opacity: 0;
@@ -389,13 +392,22 @@ body * a {
   animation-fill-mode: forwards;
 }
 .dishblock__cardsblock .dish01 {
-  animation-delay: 0.2s;
+  animation-delay: 100ms;
 }
 .dishblock__cardsblock .dish02 {
-  animation-delay: 0.4s;
+  animation-delay: 200ms;
 }
 .dishblock__cardsblock .dish03 {
-  animation-delay: 0.6s;
+  animation-delay: 300ms;
+}
+.dishblock__cardsblock .dish04 {
+  animation-delay: 400ms;
+}
+.dishblock__cardsblock .dish05 {
+  animation-delay: 500ms;
+}
+.dishblock__cardsblock .dish06 {
+  animation-delay: 600ms;
 }
 
 .card02 {
@@ -538,25 +550,15 @@ body * a {
     • Extra large screens, TV – 1201px, and more.
 */
 @media (min-width: 481px) {
-  /*   .card {
-      &__pix {
-          object-fit: cover;
-      }
-    } */
+  .resto__cardsblock {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    row-gap: 44px;
+    column-gap: 2%;
+    justify-content: center;
+  }
 }
 @media (min-width: 769px) {
-  .resto__cardsblock {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 44px;
-    column-gap: 90px;
-  }
-}
-@media (min-width: 1025px) {
-  body .body__container {
-    max-width: 1440px;
-  }
   .search {
     row-gap: 24px;
   }
@@ -583,31 +585,38 @@ body * a {
   .fonct__cardsblock__card:hover .fa-solid {
     color: #9356DC;
   }
-  .resto__cardsblock {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 44px;
-    column-gap: 90px;
+  .resto-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .resto__cardsblock .card {
-    width: 460px;
+  .resto-page .pix {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    z-index: -10;
   }
-  .resto__cardsblock .card__fav {
-    /* animation on hover only for this first project version 
-    -> see mobile default responsive*/
+  .resto-page .pix img {
+    object-fit: cover;
+    object-position: 0 60%;
+    width: 100%;
+    height: 300px;
   }
-  .resto__cardsblock .card .pix01 {
-    object-position: 0 70%;
+  .resto-page .menu {
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
   }
-  .resto__cardsblock .card .pix02 {
-    object-position: 0 58%;
+  .resto-page .menu__btn:hover {
+    filter: opacity(0.8);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
   }
-  .resto__cardsblock .card .pix03 {
-    object-position: 0 70%;
-  }
-  .resto__cardsblock .card .pix04 {
-    object-position: 0 70%;
+}
+@media (min-width: 1025px) {
+  body .body__container {
+    max-width: 1440px;
   }
   .footer {
     padding: 40px 20px 16px 20px;
@@ -633,31 +642,11 @@ body * a {
   .footer__linksblock a:hover {
     text-decoration: underline;
   }
-  .resto-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .resto__cardsblock {
+    grid-template-columns: 350px 350px;
+    column-gap: 10%;
   }
-  .resto-page .pix {
-    width: 100%;
-    height: 280px;
-    position: relative;
-    z-index: -10;
-  }
-  .resto-page .pix img {
-    object-fit: cover;
-    object-position: 0 60%;
-    width: 100%;
-    height: 300px;
-  }
-  .resto-page .menu {
+  .menu {
     width: 1000px;
   }
-
-  .resto-page .menu__btn:hover {
-    filter: opacity(0.8);
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-  }
-}/*# sourceMappingURL=main.css.map */
 

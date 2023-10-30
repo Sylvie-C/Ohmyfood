@@ -1,7 +1,7 @@
 images/.DS_Store
 
 .DS_Store
-.vscode/settings.json
+.vscode/
 
 dart-sass/sass
 dart-sass/src/dart

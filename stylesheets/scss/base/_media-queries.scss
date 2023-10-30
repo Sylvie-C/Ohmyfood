@@ -10,56 +10,26 @@
 */
 
 @media (min-width: 481px){
-/*   .card {
-    &__pix {
-        object-fit: cover;
+  .resto {
+
+    &__cardsblock {
+      display: grid;  
+      grid-template-columns: 48% 48% ; 
+      row-gap: 44px; 
+      column-gap: 2%; 
+      justify-content: center;
     }
-  } */
+  }
 } 
 
 @media (min-width: 769px) {
 
-  .resto {
+    // -------  HOME PAGE  -------
 
-    &__cardsblock {
-      flex-direction: row;  // default responsive : flex column
-      justify-content: center; 
-      flex-wrap: wrap; 
-
-      row-gap: 44px;
-      column-gap: 90px; 
-
-//       .card {
-//         width: 460px; 
-
-//         &__fav {
-//           /* animation on hover only for this first project version 
-//           -> see mobile default responsive*/
-//         }
-
-//         .pix01 { object-position: 0 70%; }
-//         .pix02 { object-position: 0 58%; }
-//         .pix03 { object-position: 0 70%; }
-//         .pix04 { object-position: 0 70%; }
-//       }
-    }
-  }
-
-}
-
-@media (min-width: 1025px) {
-  body { 
-    .body__container{ 
-      max-width: 1440px; // max-width to prevent stretch of pages on very large screens. 
-    }
-  }
-
-  // -------  HOME PAGE  -------
   .search {
     row-gap: 24px; 
 
     &__title {
-      // font-size: 2.2rem; 
       font-family: roboto; 
       font-size: 2.2rem ; 
     } 
@@ -94,29 +64,53 @@
     
   }
 
-  .resto {
+    // ------- RESTAURANTS PAGES  -------
 
-    &__cardsblock {
-      flex-direction: row;  // default responsive : flex column
-      justify-content: center; 
-      flex-wrap: wrap; 
+  .resto-page {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
 
-      row-gap: 44px;
-      column-gap: 90px; 
+    .pix {
+      width: 100%; 
+      height: 280px; 
 
-      .card {
-        width: 460px; 
-
-        &__fav {
-          /* animation on hover only for this first project version 
-          -> see mobile default responsive*/
-        }
-
-        .pix01 { object-position: 0 70%; }
-        .pix02 { object-position: 0 58%; }
-        .pix03 { object-position: 0 70%; }
-        .pix04 { object-position: 0 70%; }
+      // for menu over picture
+      position: relative; 
+      z-index: -10; 
+      
+      img {
+          object-fit:cover;
+          object-position: 0 60%; 
+          width: 100%; 
+          height: 300px; 
       }
+    }
+
+    .menu { 
+
+      max-width: 850px; 
+      display: flex; 
+      flex-direction: column; 
+
+      padding: 0 10%;
+
+      &__btn {
+        &:hover {
+          filter: opacity(.8) ; 
+          box-shadow: $bshadow-dark ; 
+          cursor: pointer; 
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width: 1025px) {
+  body { 
+    .body__container{ 
+      max-width: 1440px; // max-width to prevent stretch of pages on very large screens. 
     }
   }
 
@@ -145,40 +139,17 @@
     }
   }
 
-  // ------- RESTAURANTS PAGES  -------
-
-  .resto-page {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-
-    .pix {
-      width: 100%; 
-      height: 280px; 
-
-      // for menu over picture
-      position: relative; 
-      z-index: -10; 
-      
-      img {
-          object-fit:cover;
-          object-position: 0 60%; 
-          width: 100%; 
-          height: 300px; 
-      }
+  .resto {
+    &__cardsblock { 
+      grid-template-columns: 350px 350px ; 
+      column-gap: 10%; 
     }
+  }
 
-    .menu { 
-      width: 1000px; 
+  // -------  RESTAURANT PAGES -------
 
-      &__btn {
-        &:hover {
-          filter: opacity(.8) ; 
-          box-shadow: $bshadow-dark ; 
-          cursor: pointer; 
-        }
-      }
-    }
+  .menu { 
+    width: 1000px; 
   }
 }
 
