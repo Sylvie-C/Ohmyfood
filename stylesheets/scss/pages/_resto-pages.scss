@@ -75,20 +75,23 @@
         width: 50px; 
     }
     
-    // HTML standards : <a> or <button> tag for future onclick event (add dish by user to menu kart)
-    button {  
-        width: 100%; 
-        border:  none; 
-        background: none; 
-        cursor: pointer; 
-    }
+    /*  HTML standards : <a> or <button> tag for future onclick event 
+        The user should click on a dish card to add this dish to his/her menu kart
+        If button is used (<button class="card02"> instead of <div> for W3C rules) , 
+        just uncomment following style. 
+    */
+    // button {  
+    //     width: 100%; 
+    //     border:  none; 
+    //     background: none; 
+    //     cursor: pointer; 
+    // }
 
     &__cardsblock {
     /*  Plates cards arrive from left of the screen on page load, 
         smoothly and with delay between them. 
     */
         * { 
-            opacity: 0; // default position on page load = left: 0 -> invisible
             animation: slide01 1s ; // default animation-timing-function ease-out ok
             animation-fill-mode: forwards // freeze final state -> visible + position
          }
