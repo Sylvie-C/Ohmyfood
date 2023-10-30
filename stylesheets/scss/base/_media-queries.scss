@@ -14,9 +14,9 @@
 
     &__cardsblock {
       display: grid;  
-      grid-template-columns: 40% 40% ; 
+      grid-template-columns: 48% 48% ; 
       row-gap: 44px; 
-      column-gap: 10%; 
+      column-gap: 2%; 
       justify-content: center;
     }
   }
@@ -139,16 +139,11 @@
     }
   }
 
-  // -------  HOME PAGE  -------
-
-  .card {
-    &__pix {object-fit: cover;}
-    // pictures framing
-    .pix01 { object-position: 0 50%; }
-    .pix02 { object-position: 0 61.5%; }
-    .pix03 { object-position: 0 100%; }
-    .pix04 { object-position: 0 95%; }
-
+  .resto {
+    &__cardsblock { 
+      grid-template-columns: 350px 350px ; 
+      column-gap: 10%; 
+    }
   }
 
   // -------  RESTAURANT PAGES -------

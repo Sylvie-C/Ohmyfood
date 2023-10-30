@@ -1,6 +1,11 @@
 @use '../utils/variables' as * ; 
 @use '../utils/mixins' as * ; 
 
+/* 
+    Keyframes animations in this file. 
+    Other animations like transitions can be found in _mixins.scss file. 
+*/
+
 // -------  KEYFRAMES  -------
 
 // no scroll bar during loader animation (body)

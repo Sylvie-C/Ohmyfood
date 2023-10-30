@@ -47,6 +47,10 @@ body * a {
   animation-fill-mode: forwards;
 }
 
+/* 
+    Keyframes animations in this file. 
+    Other animations like transitions can be found in _mixins.scss file. 
+*/
 @keyframes noscroll {
   0% {
     overflow: hidden;
@@ -154,8 +158,7 @@ body * a {
 .fonct__cardsblock__card {
   display: flex;
   align-items: center;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
+  column-gap: 10px;
   width: 100%;
   border-radius: 15px;
   background: #f7f7f7;
@@ -209,28 +212,23 @@ body * a {
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 .resto__cardsblock .card__pix {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 148px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 .resto__cardsblock .card .pix01 {
-  -o-object-position: 0 100%;
-     object-position: 0 100%;
+  object-position: 0 100%;
 }
 .resto__cardsblock .card .pix02 {
-  -o-object-position: 0 61.5%;
-     object-position: 0 61.5%;
+  object-position: 0 61.5%;
 }
 .resto__cardsblock .card .pix03 {
-  -o-object-position: 0 100%;
-     object-position: 0 100%;
+  object-position: 0 100%;
 }
 .resto__cardsblock .card .pix04 {
-  -o-object-position: 0 95%;
-     object-position: 0 95%;
+  object-position: 0 95%;
 }
 .resto__cardsblock .card__info {
   display: flex;
@@ -284,10 +282,8 @@ body * a {
   z-index: -10;
 }
 .resto-page .pix img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 0 8%;
-     object-position: 0 8%;
+  object-fit: cover;
+  object-position: 0 8%;
   width: 100%;
   height: 260px;
 }
@@ -556,10 +552,9 @@ body * a {
 @media (min-width: 481px) {
   .resto__cardsblock {
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 48% 48%;
     row-gap: 44px;
-    -moz-column-gap: 10%;
-         column-gap: 10%;
+    column-gap: 2%;
     justify-content: center;
   }
 }
@@ -582,8 +577,7 @@ body * a {
   .fonct__cardsblock {
     flex-direction: row;
     justify-content: center;
-    -moz-column-gap: 3%;
-         column-gap: 3%;
+    column-gap: 3%;
   }
   .fonct__cardsblock__card {
     width: 26%;
@@ -603,10 +597,8 @@ body * a {
     z-index: -10;
   }
   .resto-page .pix img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 0 60%;
-       object-position: 0 60%;
+    object-fit: cover;
+    object-position: 0 60%;
     width: 100%;
     height: 300px;
   }
@@ -629,8 +621,7 @@ body * a {
   .footer {
     padding: 40px 20px 16px 20px;
     flex-direction: row-reverse;
-    -moz-column-gap: 70px;
-         column-gap: 70px;
+    column-gap: 70px;
   }
   .footer__title {
     font-size: 1rem;
@@ -640,8 +631,7 @@ body * a {
     margin: 20px;
     flex-direction: row;
     align-items: center;
-    -moz-column-gap: 18px;
-         column-gap: 18px;
+    column-gap: 18px;
   }
   .footer__linksblock .fa-xs {
     font-size: 13px;
@@ -652,25 +642,9 @@ body * a {
   .footer__linksblock a:hover {
     text-decoration: underline;
   }
-  .card__pix {
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .card .pix01 {
-    -o-object-position: 0 50%;
-       object-position: 0 50%;
-  }
-  .card .pix02 {
-    -o-object-position: 0 61.5%;
-       object-position: 0 61.5%;
-  }
-  .card .pix03 {
-    -o-object-position: 0 100%;
-       object-position: 0 100%;
-  }
-  .card .pix04 {
-    -o-object-position: 0 95%;
-       object-position: 0 95%;
+  .resto__cardsblock {
+    grid-template-columns: 350px 350px;
+    column-gap: 10%;
   }
   .menu {
     width: 1000px;
