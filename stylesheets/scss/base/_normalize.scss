@@ -58,12 +58,12 @@ body * {
     justify-content: center;
     align-items: center;
     
-    animation: loader-bckgd 3s ease-in-out ; 
+    animation: loader-bckgd 3s ease-out ; 
     animation-fill-mode: forwards; 
 
     &__img {
         width: 50px; 
-        animation: loader-img 3s ease-out; 
+        animation: loader-img 3s ease-out ; 
         animation-fill-mode: forwards; // loader img remain invisible (opacity) end of animation
     }
 }

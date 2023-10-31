@@ -38,7 +38,7 @@ body * a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader-bckgd 3s ease-in-out;
+  animation: loader-bckgd 3s ease-out;
   animation-fill-mode: forwards;
 }
 .loader__img {
