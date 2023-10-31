@@ -493,7 +493,6 @@ body * a {
   text-align: center;
   padding: 18px 0 6px 0;
   margin: 0;
-  box-shadow: 0 2px 5px #b8b8b8;
 }
 .header__location {
   display: flex;
@@ -501,6 +500,7 @@ body * a {
   align-items: center;
   height: 44px;
   background: #f0f0f0;
+  box-shadow: #b8b8b8 0 8px 6px -6px inset;
 }
 .header__location * {
   color: #4d4d4d;
@@ -567,6 +567,9 @@ body * a {
     row-gap: 44px;
     column-gap: 2%;
     justify-content: center;
+  }
+  .header__location {
+    box-shadow: none;
   }
 }
 @media (min-width: 769px) {
