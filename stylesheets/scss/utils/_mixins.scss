@@ -96,9 +96,11 @@
     }
 }
 
-// home page card : picture, title, subtitle, heart icon (like)
+// home page cards : picture, title, subtitle, heart icon (like)
 @mixin card {
     .card {
+        width: 300px;
+
         background-color: white; 
         border-radius: 15px;
         padding: 2px;

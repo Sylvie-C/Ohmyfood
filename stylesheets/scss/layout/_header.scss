@@ -2,16 +2,16 @@
 @use '../utils/mixins' as * ; 
 
 .header { 
+
+    // -------  HOME PAGE  -------
+
     &__title {
         font-family: shrikhand , serif ; 
         font-size: 24px; 
         text-align: center; 
 
         padding: 18px 0 6px 0;
-        margin: 0; 
-
-        // box-shadow: 0 2px 5px #b8b8b8; 
-        
+        margin: 0;         
     }
 
     &__location {
@@ -45,14 +45,32 @@
         font-size: .85rem; 
     }
 
-    // for restaurants pages
+    // -------  RESTAURANT PAGES  -------
     &__link {
         position: absolute; 
         margin-left: 14px; 
         margin-top: 14px; 
     }
 
+    &__pix {
+        width: 100%; 
+        height: 210px; 
 
+        // for menu over picture
+        position: relative; 
+        z-index: -10; 
+        
+        img {
+            object-fit: cover; 
+            width: 100%; 
+            height: 260px;
+        }
+
+        // Default header pictures position
+        .restopix02 { object-position: 0 80%; }
+        .restopix03 { object-position: 0% ; }
+        .restopix04 { object-position: -30px -30px; }
+    }
 }
 
 

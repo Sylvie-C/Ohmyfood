@@ -3,21 +3,9 @@
 @use '../base/normalize' ; 
 
 .resto-page { 
-    .pix {
-        width: 100%; 
-        height: 210px; 
 
-        // for menu over picture
-        position: relative; 
-        z-index: -10; 
-        
-        img {
-            object-fit: cover;
-            object-position: 0 8%; 
-            width: 100%; 
-            height: 260px;
-        }
-    }
+    display: flex; 
+    justify-content: center; 
 
     .menu {
         background: $omf-lightgray; 
@@ -106,14 +94,16 @@
 
     @include alignx ; 
 
+    // check box animation
     &:hover > &__check { 
-        transition: all 1s ease-in-out ;
-        width: 20%; 
+        width: 20%; // default check container width before animation = 0
+
+        transition: all .5s ease-in-out ;
     }
 
     &:hover > &__info {
-        transition: all 1s ease-in-out; 
-        width: 80%; 
+        width: 80%; // default text container width before animation = 100% 
+        transition: all .5s ease-in-out; 
     }
 
     &__info {
@@ -121,8 +111,8 @@
         justify-content: space-between; 
         align-items: flex-end; // for price to be aligned with text at bottom of card
 
-        width: 100% ;  // default width before animation
-        transition: all 1s ease-in-out ; 
+        width: 100% ;  // default text container width before animation
+        transition: all .5s ease-in-out ; 
 
         .card02__text {
             width: 100%;
@@ -159,16 +149,21 @@
     }
 
     &__check {
-        width: 0%; // default width before animation
-        transition: all 1s ease-in-out; 
+        width: 0%; // default check container width before animation/hover
+
+        // check icon style
+        .fa-circle-check { 
+            font-size: 1.4em ; 
+            color: white; 
+        }
+
+        transition: all .5s ease-in-out; 
 
         height: 100%; 
         border-radius: 0 16px 16px 0; 
         background: $omf-lightgreen ; 
 
         @include alignx-xycenter; 
-
-        .fa-check { color: white; }
     }
 
 }
