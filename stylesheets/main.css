@@ -598,6 +598,18 @@ body * a {
     justify-content: center;
     justify-items: center;
   }
+  .header__pix .restopix01 {
+    object-position: 0 60%;
+  }
+  .header__pix .restopix02 {
+    object-position: 0 60%;
+  }
+  .header__pix .restopix03 {
+    object-position: 0 82%;
+  }
+  .header__pix .restopix04 {
+    object-position: 0 85%;
+  }
   .resto-page .menu {
     max-width: 850px;
     display: flex;
@@ -622,12 +634,6 @@ body * a {
   }
   .header__pix img {
     height: 300px;
-  }
-  .header__pix .restopix01 {
-    object-position: 0 60%;
-  }
-  .header__pix .restopix02 {
-    object-position: 0 60%;
   }
   .header__pix .restopix03 {
     object-position: 0 70%;

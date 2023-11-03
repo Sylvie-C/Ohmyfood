@@ -29,7 +29,6 @@
   }
 
   .fonct {
-
     &__cardsblock {
 
       &__card{
@@ -39,11 +38,9 @@
         }
       }
     }
-    
   }
 
   .resto {
-
     &__cardsblock {
       display: grid;  
       grid-template-columns: 48% 48% ; 
@@ -55,6 +52,19 @@
   }
 
     // ------- RESTAURANTS PAGES  -------
+
+  .header {
+    // framing restaurant pages picture (header)
+
+    &__pix { 
+
+      .restopix01 { object-position: 0 60% ; }
+      .restopix02 { object-position: 0 60% ; }
+      .restopix03 { object-position: 0 82% ; }
+      .restopix04 { object-position: 0 85% ; }
+    }
+
+  }
 
   .resto-page {
 
@@ -96,9 +106,6 @@
       img {
           height: 300px; 
       }
-
-      .restopix01 { object-position: 0 60% ; }
-      .restopix02 { object-position: 0 60% ; }
       .restopix03 { object-position: 0 70% ; }
       .restopix04 { object-position: 0 70% ; }
     }
