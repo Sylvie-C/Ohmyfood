@@ -97,22 +97,20 @@
     // check box animation
     &:hover > &__check { 
         width: 20%; // default check container width before animation = 0
-
         transition: all .5s ease-in-out ;
     }
-
     &:hover > &__info {
         width: 80%; // default text container width before animation = 100% 
         transition: all .5s ease-in-out; 
     }
 
-    &__info {
+    &__info { 
+        width: 100% ;  // default text container width before animation
+        transition: all .5s ease-in-out ;
+
         display: flex; 
         justify-content: space-between; 
-        align-items: flex-end; // for price to be aligned with text at bottom of card
-
-        width: 100% ;  // default text container width before animation
-        transition: all .5s ease-in-out ; 
+        align-items: flex-end; // for price to be aligned with text at bottom of card 
 
         .card02__text {
             width: 100%;
@@ -150,14 +148,13 @@
 
     &__check {
         width: 0%; // default check container width before animation/hover
+        transition: all .5s ease-in-out; 
 
         // check icon style
         .fa-circle-check { 
             font-size: 1.4em ; 
             color: white; 
         }
-
-        transition: all .5s ease-in-out; 
 
         height: 100%; 
         border-radius: 0 16px 16px 0; 
