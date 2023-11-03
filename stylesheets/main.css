@@ -8,12 +8,6 @@
 }
 body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-body__container {
-  max-width: 1440px;
 }
 
 .noscroll {
@@ -676,5 +670,11 @@ body * a {
   }
   .menu {
     width: 1000px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    justify-content: center;
   }
 }/*# sourceMappingURL=main.css.map */
