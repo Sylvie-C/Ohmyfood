@@ -17,7 +17,7 @@ body__container {
 }
 
 .noscroll {
-  animation: 3s noscroll linear;
+  animation: 2s noscroll linear;
 }
 
 body * {
@@ -94,12 +94,12 @@ body * a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader-bckgd 3s ease-out;
+  animation: loader-bckgd 2s ease-out;
   animation-fill-mode: forwards;
 }
 .loader__img {
   width: 50px;
-  animation: loader-img 3s ease-out;
+  animation: loader-img 2s ease-out;
   animation-fill-mode: forwards;
 }
 
