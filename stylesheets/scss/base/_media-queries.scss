@@ -9,7 +9,6 @@
   .header__location {
     box-shadow: none ;
   }
-
   .search {
     row-gap: 24px; 
 
@@ -27,7 +26,6 @@
       }
     }
   }
-
   .fonct {
     &__cardsblock {
 
@@ -39,7 +37,6 @@
       }
     }
   }
-
   .resto {
     &__cardsblock {
       display: grid;  
@@ -88,6 +85,23 @@
       }
     }
   }
+
+  //  Card for 1 plate 
+    .card02 {
+        @include card02 ; 
+
+        @include alignx ; 
+
+        // check box animation
+        &:hover > &__check { 
+            width: 20%; // default check container width before animation = 0
+            transition: all .5s ease-in-out ;
+        }
+        &:hover > &__info {
+            width: 80%; // default text container width before animation = 100% 
+            transition: all .5s ease-in-out; 
+        }
+    }
 }
 
 @media (min-width: 1024px) {
