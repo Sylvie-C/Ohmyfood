@@ -17,8 +17,12 @@
     &__location {
         @include alignx-xycenter; 
         height: 44px; 
-        background: #f0f0f0; 
+        background: #f0f0f0 ; 
         box-shadow: #b8b8b8 0 8px 6px -6px inset ;
+    
+        form {
+            align-items: center; 
+        }
     }
 
     &__location * {
@@ -31,18 +35,24 @@
 
     &__location--icon {
         width: 12px; 
-        height: 14px; 
+        height:20px; 
         margin: 0 6px; 
-    }
-
-    input {
-        width: 100px; 
     }
 
     &__location--text {
         font-family: roboto, sans-serif;   
         font-weight: bolder;    
         font-size: .85rem; 
+        vertical-align: top;
+    }
+
+    input {
+        width: 150px;
+    }
+
+    input::placeholder {
+        opacity: 1;
+
     }
 
     // -------  RESTAURANT PAGES  -------

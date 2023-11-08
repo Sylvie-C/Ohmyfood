@@ -95,11 +95,11 @@
     @include alignx ; 
 
     // check box animation
-    &:active > &__check { 
+    &:hover > &__check { 
         width: 20%; // default check container width before animation = 0
         transition: all .5s ease-in-out ;
     }
-    &:active > &__info {
+    &:hover > &__info {
         width: 80%; // default text container width before animation = 100% 
         transition: all .5s ease-in-out; 
     }
