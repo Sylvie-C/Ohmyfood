@@ -48,8 +48,7 @@
     }
 
     &__text {
-        font-weight: 100; 
-        color: $omf-gray; 
+        color: #6b6b6b; 
         text-align: center; 
         margin: 0 20px; 
     }
@@ -64,11 +63,10 @@
     }
 }
 
-
 // ---------  "FONCTIONNEMENT" SECTION  ---------
 
 .fonct {
-    padding:  24px 0px ;
+    padding:  24px 18px 60px 18px ;
 
     &__title {
         @include section-title; 
@@ -76,34 +74,52 @@
 
     &__cardsblock {
 
-        @include aligny-xcenter; 
+        margin-left: 10px;
         row-gap: 18px; 
+
+        @include aligny-xcenter; 
 
         &__card {
             @include alignx-ycenter; 
+
             column-gap: 10px; 
-            width: 300px; 
+            width: 260px; 
 
             border-radius: 15px; 
             background: $omf-lightgray; 
             box-shadow: $bshadow; 
 
-            .fonct__nb {
+            .card__nb {
                 color: white; 
+                font-size: 0.7rem;
                 background: $primary-color; 
 
                 border-radius: 50%;
-                padding: 1px 6px; 
+                padding: 0.16rem 0.42rem; 
 
                 position: relative; 
                 left: -10px; 
             }
 
-            .fonct__text {
-                font-weight: bold; 
-                color: $omf-gray; 
+            .card__content {
+                display: flex; 
+                align-items: first baseline;
+            }
 
-                margin: 24px 0px; 
+            .fa-solid { 
+                height: fit-content; 
+                width: fit-content; 
+                margin-right: 14px;
+            }
+
+            .fa-store {
+                font-size: 0.94rem;
+            }
+
+            .card__text {
+                font-weight: 500; 
+                font-size: 0.82rem;
+                margin: 24px 0px;
             }
         }
 
@@ -116,11 +132,13 @@
 
 // ---------  RESTAURANTS SECTION  ---------
 
-.resto {
-    margin: 40px 0 0 0; 
-    padding: 30px 10px; 
-
+.restaurants { 
     background: $omf-lightgray; 
+    width: 100%;
+}
+
+.resto {
+    padding: 30px 18px; 
 
     .resto__title {
         @include section-title; 
@@ -131,11 +149,12 @@
     }
 
     &__cardsblock {
-
         @include aligny-xcenter; 
         row-gap: 14px;
 
         @include card; 
+
+        a { width: fit-content; } 
     }
 }
 

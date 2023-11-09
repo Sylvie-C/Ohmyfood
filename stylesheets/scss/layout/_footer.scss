@@ -12,12 +12,17 @@
 
     &__title {
         font-family: shrikhand; 
-        font-size: 0.86rem;
+        font-size: 0.88rem;
     }
     
      &__linksblock {
-        font-size: .84rem;
+        
         .fa-solid { color: white; }
+
+        a{ 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+        }
         a:active { text-decoration: underline; }
 
         @include aligny; 

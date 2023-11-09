@@ -39,9 +39,9 @@
     text-decoration: none; 
     color: white;
     font-size: .9rem; 
-    font-weight: 600;
+    font-weight: 500;
 
-    padding: 16px 20px; 
+    padding: 13px 20px; 
     margin: 20px 0 ; 
 
     background: linear-gradient(180deg, $second-color -30%, $primary-color 110%);
@@ -131,11 +131,12 @@
 
         &__info * {
             margin: 0 ; 
+            line-height: 1.3rem;
         }
 
-        &__subtitle {
-            font-weight: 100; 
-            color: $omf-gray; 
+        &__subtitle { 
+            color: $omf-gray;
+            font-size: 0.9rem; 
         }
 
         &__fav {
@@ -170,6 +171,15 @@
 
 
 // -------  LAYOUT  -------
+
+/* Containers width : 
+    "fonctionnement" & "restaurants" sections for home page, 
+    menus for restaurant pages,  
+*/
+@mixin containerWidth { width: 1000px; }
+
+
+// Flexbox alignments
 @mixin alignx {
     display: flex; 
 }
