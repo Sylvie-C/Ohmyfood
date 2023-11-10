@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /* Containers width : 
     "fonctionnement" & "restaurants" sections for home page, 
     menus for restaurant pages,  
@@ -319,7 +320,7 @@ body * a {
 }
 .resto-page .menu__title {
   font-size: 1.4rem;
-  font-family: shrikhand;
+  font-family: "Shrikhand", serif;
 }
 .resto-page .menu__fav {
   display: flex;
@@ -686,18 +687,6 @@ body * a {
   .header, .footer {
     min-width: 1024px;
   }
-  .header__pix {
-    height: 280px;
-  }
-  .header__pix img {
-    height: 300px;
-  }
-  .header__pix .restopix03 {
-    object-position: 0 70%;
-  }
-  .header__pix .restopix04 {
-    object-position: 0 70%;
-  }
   .fonctionnement-restaurants {
     display: flex;
     flex-direction: column;
@@ -758,11 +747,29 @@ body * a {
   .footer__linksblock a:hover {
     text-decoration: underline;
   }
-  .header__pix .restopix03 {
-    object-position: 0 60%;
+  .header__pix {
+    height: 280px;
   }
-  .menu {
+  .header__pix img {
+    height: 300px;
+  }
+  .header__pix .restopix03 {
+    object-position: 0 70%;
+  }
+  .header__pix .restopix04 {
+    object-position: 0 70%;
+  }
+  .resto-page .menu {
     width: 1000px;
+  }
+  .resto-page .menu__header {
+    justify-content: center;
+  }
+  .resto-page .menu__title {
+    margin-right: 60px;
+  }
+  .resto-page .menu__title .heart-default, .resto-page .menu__title .heart-like {
+    right: 0;
   }
 }
 @media (min-width: 1440px) {

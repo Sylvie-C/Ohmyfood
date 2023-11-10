@@ -38,6 +38,7 @@
       }
     }
   }
+
   .resto {
      &__cardsblock {
         flex-direction: row; 
@@ -111,22 +112,6 @@
     min-width: 1024px; 
   }
 
-  .header {
-
-    // -------  RESTAURANTS PAGES  ------- 
-
-    &__pix { 
-      height: 280px; 
-      
-      img {
-          height: 300px; 
-      }
-      .restopix03 { object-position: 0 70% ; }
-      .restopix04 { object-position: 0 70% ; }
-    }
-    
-  }
-
   // -------  HOME  -------
   .fonctionnement-restaurants {
     @include aligny-xcenter; 
@@ -191,15 +176,33 @@
   }
 
   // -------  RESTAURANT PAGES -------
-
   .header {
-    &__pix {
-      .restopix03 { object-position: 0 60%; }
+
+    &__pix { 
+      height: 280px; 
+      
+      img {
+          height: 300px; 
+      }
+      .restopix03 { object-position: 0 70% ; }
+      .restopix04 { object-position: 0 70% ; }
     }
+    
   }
 
-  .menu { 
-    @include containerWidth ; 
+  .resto-page {
+    .menu { 
+      @include containerWidth ; 
+  
+      &__header { 
+        justify-content: center;
+      }
+  
+      &__title {
+        margin-right: 60px; 
+        .heart-default , .heart-like { right: 0; }
+      }
+    }
   }
 }
 
