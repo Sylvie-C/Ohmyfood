@@ -1,0 +1,4 @@
+*.html linguist-detectable = false , 
+*.react linguist-detectable = true , 
+*.sass linguist-detectable = true , 
+*.javascript linguist-detectable = true
