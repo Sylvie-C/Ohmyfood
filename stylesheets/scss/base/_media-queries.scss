@@ -1,5 +1,5 @@
-@use '../utils/variables' as * ; 
-@use '../utils/mixins' as * ; 
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 
 @media (min-width: 768px) {
@@ -7,200 +7,229 @@
   // -------  HOME PAGE  -------
 
   .header__location {
-    box-shadow: none ;
+    box-shadow: none;
   }
 
   .search {
-    row-gap: 24px; 
+    row-gap: 24px;
 
     &__title {
-      font-family: roboto; 
-      font-size: 2.2rem ; 
-    } 
+      font-family: roboto;
+      font-size: 2.2rem;
+    }
 
     &__button {
-      margin: 0; 
+      margin: 0;
+
       &:hover {
-        filter: opacity(.8) ; 
-        box-shadow: $bshadow-dark ; 
-        cursor: pointer; 
-      }
-    }
-  }
-
-  .fonct {
-    &__cardsblock {
-
-      &__card{
-        &:hover {
-          .fa-solid { color: $primary-color ; }
-        }
+        filter: opacity(.8);
+        box-shadow: $bshadow-dark ;
+        cursor: pointer;
       }
     }
   }
 
   .resto {
-     &__cardsblock {
-        flex-direction: row; 
-        flex-wrap: wrap; 
+    &__cardsblock {
+      flex-direction: row;
+      flex-wrap: wrap;
 
-        column-gap: 10%; 
-        row-gap: 44px; 
-        justify-content: center;
-    } 
+      column-gap: 10%;
+      row-gap: 44px;
+      justify-content: center;
+    }
   }
 
-    // ------- RESTAURANTS PAGES  -------
+  // ------- RESTAURANTS PAGES  -------
 
   .header {
     // framing restaurant pages picture (header)
 
-    &__pix { 
+    &__pix {
 
-      .restopix01 { object-position: 0 60% ; }
-      .restopix02 { object-position: 0 60% ; }
-      .restopix03 { object-position: 0 82% ; }
-      .restopix04 { object-position: 0 85% ; }
+      .restopix01 {
+        object-position: 0 60%;
+      }
+
+      .restopix02 {
+        object-position: 0 60%;
+      }
+
+      .restopix03 {
+        object-position: 0 82%;
+      }
+
+      .restopix04 {
+        object-position: 0 85%;
+      }
     }
 
   }
 
   .resto-page {
 
-    .menu { 
+    .menu {
 
-      max-width: 850px; 
-      display: flex; 
-      flex-direction: column; 
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
       padding: 0 10%;
 
       &__btn {
         &:hover {
-          filter: opacity(.8) ; 
-          box-shadow: $bshadow-dark ; 
-          cursor: pointer; 
+          filter: opacity(.8);
+          box-shadow: $bshadow-dark ;
+          cursor: pointer;
         }
       }
 
       &__title {
-        font-size: 1.6rem; 
+        font-size: 1.6rem;
       }
     }
   }
 
   //  Card for 1 plate 
   .card02 {
-      @include card02 ; 
+    @include card02;
 
-      @include alignx ; 
+    @include alignx;
 
-      // check box animation
-      &:hover > &__check { 
-          width: 20%; // default check container width before animation = 0
-          transition: all .5s ease-in-out ;
-      }
-      &:hover > &__info {
-          width: 80%; // default text container width before animation = 100% 
-          transition: all .5s ease-in-out; 
-      }
+    // check box animation
+    &:hover>&__check {
+      width: 20%; // default check container width before animation = 0
+      transition: all .5s ease-in-out;
+    }
+
+    &:hover>&__info {
+      width: 80%; // default text container width before animation = 100% 
+      transition: all .5s ease-in-out;
+    }
   }
 }
 
 @media (min-width: 1024px) {
 
-  .header , .footer {
-    min-width: 1024px; 
+  .header,
+  .footer {
+    min-width: 1024px;
   }
 
   // -------  HOME  -------
   .fonctionnement-restaurants {
-    @include aligny-xcenter; 
+    @include aligny-xcenter;
     width: 100%;
   }
-  
+
   .fonct {
-    @include containerWidth; 
+    @include containerWidth;
 
     &__cardsblock {
       flex-direction: row; // default responsive : flexbox column
-      justify-content: space-between; 
+      justify-content: space-between;
     }
   }
 
-  .restaurants { 
-    @include alignx-xcenter; 
+  .restaurants {
+    @include alignx-xcenter;
   }
 
   .resto {
 
-    @include containerWidth; 
+    @include containerWidth;
 
     &__cardsblock {
 
-      column-gap: 3%; 
+      column-gap: 3%;
       justify-content: space-between;
 
-      .card { 
-        width: 450px; 
-      
-        .pix01 { object-position: 0 70%; }
-        .pix03 { object-position: 0 80%; }
-        .pix04 { object-position: 0 74%; }
+      .card {
+        width: 450px;
+
+        .pix01 {
+          object-position: 0 70%;
+        }
+
+        .pix03 {
+          object-position: 0 80%;
+        }
+
+        .pix04 {
+          object-position: 0 74%;
+        }
       }
     }
   }
 
   .footer {
-    padding: 40px 20px 16px 20px ; 
-    flex-direction: row-reverse;  // default responsive : flex column
-    column-gap: 70px; 
+    padding: 40px 20px 16px 20px;
+    flex-direction: row-reverse; // default responsive : flex column
+    column-gap: 70px;
 
-    &__title { font-size: 1rem; }
+    &__title {
+      font-size: 1rem;
+    }
 
     &__linksblock {
-      font-size: .88rem; 
+      font-size: .88rem;
 
-      margin: 20px; 
+      margin: 20px;
 
-      flex-direction: row; 
-      align-items: center; 
+      flex-direction: row;
+      align-items: center;
 
-      column-gap: 18px; 
+      column-gap: 18px;
 
-      .fa-xs { font-size: 13px; }
+      .fa-xs {
+        font-size: 13px;
+      }
 
-      a:nth-child(3) { padding-left: 30px; }
+      a:nth-child(3) {
+        padding-left: 30px;
+      }
 
-      a:hover { text-decoration: underline; }
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   // -------  RESTAURANT PAGES -------
   .header {
 
-    &__pix { 
-      height: 280px; 
-      
+    &__pix {
+      height: 280px;
+
       img {
-          height: 300px; 
+        height: 300px;
       }
-      .restopix03 { object-position: 0 70% ; }
-      .restopix04 { object-position: 0 70% ; }
+
+      .restopix03 {
+        object-position: 0 70%;
+      }
+
+      .restopix04 {
+        object-position: 0 70%;
+      }
     }
-    
+
   }
 
   .resto-page {
-    .menu { 
-      @include containerWidth ; 
-  
-      &__header { 
+    .menu {
+      @include containerWidth;
+
+      &__header {
         justify-content: center;
       }
-  
+
       &__title {
-        margin-right: 60px; 
-        .heart-default , .heart-like { right: 0; }
+        margin-right: 60px;
+
+        .heart-default,
+        .heart-like {
+          right: 0;
+        }
       }
     }
   }
@@ -208,7 +237,7 @@
 
 @media (min-width: 1440px) {
   body {
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
   }
 }

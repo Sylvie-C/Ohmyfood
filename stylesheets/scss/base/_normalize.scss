@@ -1,5 +1,5 @@
-@use '../utils/variables' as * ; 
-@use '../utils/mixins' as * ; 
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -8,37 +8,39 @@
 
 // For further additional fonts, update FONT MIXINS consequently
 
-@font-face { 
-    font-family: shrikhand ; 
-    src: url("../fonts/shrikhand.ttf") ; 
-}
 @font-face {
-    font-family: roboto; 
-    src: url('../fonts/roboto.ttf') ; 
+  font-family: shrikhand;
+  src: url("../../../public/fonts/shrikhand.ttf");
+}
+
+@font-face {
+  font-family: roboto;
+  src: url('../../../public/fonts/roboto.ttf');
 }
 
 // -------  BODY  -------
 
-body { 
-    margin: 0;  
+body {
+  margin: 0;
 }
 
 .noscroll {
-    // hide scroll bar during loader animation, on home page only
-    animation: 2s noscroll linear ; 
+  // hide scroll bar during loader animation, on home page only
+  animation: 2s noscroll linear;
 }
 
 body * {
-    box-sizing: border-box; 
- 
-    font-family: roboto; 
-    font-size: 1rem; 
+  box-sizing: border-box;
 
-    .fa-solid { @include icon ; }
+  font-family: roboto;
+  font-size: 1rem;
 
-    a {
-        text-decoration: none;
-        color: black; 
-    }
+  .fa-solid {
+    @include icon;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
-

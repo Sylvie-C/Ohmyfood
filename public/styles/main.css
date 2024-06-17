@@ -6,11 +6,11 @@
 */
 @font-face {
   font-family: shrikhand;
-  src: url("../fonts/shrikhand.ttf");
+  src: url("../../../public/fonts/shrikhand.ttf");
 }
 @font-face {
   font-family: roboto;
-  src: url("../fonts/roboto.ttf");
+  src: url("../../../public/fonts/roboto.ttf");
 }
 body {
   margin: 0;
@@ -643,9 +643,6 @@ body * a {
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
-  .fonct__cardsblock__card:hover .fa-solid {
-    color: #9356DC;
-  }
   .resto__cardsblock {
     flex-direction: row;
     flex-wrap: wrap;
@@ -704,7 +701,8 @@ body * a {
   }
 }
 @media (min-width: 1024px) {
-  .header, .footer {
+  .header,
+  .footer {
     min-width: 1024px;
   }
   .fonctionnement-restaurants {
@@ -796,7 +794,8 @@ body * a {
   .resto-page .menu__title {
     margin-right: 60px;
   }
-  .resto-page .menu__title .heart-default, .resto-page .menu__title .heart-like {
+  .resto-page .menu__title .heart-default,
+  .resto-page .menu__title .heart-like {
     right: 0;
   }
 }
@@ -805,4 +804,4 @@ body * a {
     display: flex;
     justify-content: center;
   }
-}/*# sourceMappingURL=main.css.map */
+}

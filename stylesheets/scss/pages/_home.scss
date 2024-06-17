@@ -1,160 +1,161 @@
-@use '../utils/variables' as * ; 
-@use '../utils/mixins' as * ; 
-@use '../components/animations' ; 
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../utils/animations';
 
 
 // ------ LOADER -------
 
 .loader {
-    width: 100%; 
-    height: 100%; 
+  width: 100%;
+  height: 100%;
 
-    position: absolute; 
-    background: black; 
+  position: absolute;
+  background: black;
 
-    // placed much over page, to hide everything
-    z-index: 10; 
+  // placed much over page, to hide everything
+  z-index: 10;
 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    
-    animation: loader-bckgd 2s ease-out ; 
-    animation-fill-mode: forwards; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    &__img {
-        width: 50px; 
-        animation: loader-img 2s ease-out ; 
-        animation-fill-mode: forwards; // loader img remain invisible (opacity) end of animation
-    }
+  animation: loader-bckgd 2s ease-out;
+  animation-fill-mode: forwards;
+
+  &__img {
+    width: 50px;
+    animation: loader-img 2s ease-out;
+    animation-fill-mode: forwards; // loader img remain invisible (opacity) end of animation
+  }
 }
 
 // -------  SEARCH SECTION  -------
 
 .search {
-    @include aligny-xcenter; 
-    row-gap: 10px; 
-    
-    padding: 30px 0; 
-    background: $omf-lightgray; 
+  @include aligny-xcenter;
+  row-gap: 10px;
 
-    &__title {
-        font-size: 1.22rem; 
-        font-weight: bolder; 
-        text-align: center;
-        margin: 0 46px; 
-    }
+  padding: 30px 0;
+  background: $omf-lightgray;
 
-    &__text {
-        color: #6b6b6b; 
-        text-align: center; 
-        margin: 0 20px; 
-    }
+  &__title {
+    font-size: 1.22rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0 46px;
+  }
 
-    &__button {
-        @include btn01 ; 
-        &:active {
-            filter: opacity(.8) ; 
-            box-shadow: $bshadow-dark ; 
-            cursor: pointer; 
-        }
+  &__text {
+    color: #6b6b6b;
+    text-align: center;
+    margin: 0 20px;
+  }
+
+  &__button {
+    @include btn01;
+
+    &:active {
+      filter: opacity(.8);
+      box-shadow: $bshadow-dark ;
+      cursor: pointer;
     }
+  }
 }
 
 // ---------  "FONCTIONNEMENT" SECTION  ---------
 
 .fonct {
-    padding:  24px 18px 60px 18px ;
+  padding: 24px 18px 60px 18px;
 
-    &__title {
-        @include section-title; 
+  &__title {
+    @include section-title;
+  }
+
+  &__cardsblock {
+
+    margin-left: 10px;
+    row-gap: 18px;
+
+    @include aligny-xcenter;
+
+    &__card {
+      @include alignx-ycenter;
+
+      column-gap: 10px;
+      width: 260px;
+
+      border-radius: 15px;
+      background: $omf-lightgray;
+      box-shadow: $bshadow;
+
+      .card__nb {
+        color: white;
+        font-size: 0.7rem;
+        background: $primary-color;
+
+        border-radius: 50%;
+        padding: 0.16rem 0.42rem;
+
+        position: relative;
+        left: -10px;
+      }
+
+      .card__content {
+        display: flex;
+        align-items: first baseline;
+      }
+
+      .fa-solid {
+        height: fit-content;
+        width: fit-content;
+        margin-right: 14px;
+      }
+
+      .fa-store {
+        font-size: 0.94rem;
+      }
+
+      .card__text {
+        font-weight: 500;
+        font-size: 0.82rem;
+        margin: 24px 0px;
+      }
     }
 
-    &__cardsblock {
-
-        margin-left: 10px;
-        row-gap: 18px; 
-
-        @include aligny-xcenter; 
-
-        &__card {
-            @include alignx-ycenter; 
-
-            column-gap: 10px; 
-            width: 260px; 
-
-            border-radius: 15px; 
-            background: $omf-lightgray; 
-            box-shadow: $bshadow; 
-
-            .card__nb {
-                color: white; 
-                font-size: 0.7rem;
-                background: $primary-color; 
-
-                border-radius: 50%;
-                padding: 0.16rem 0.42rem; 
-
-                position: relative; 
-                left: -10px; 
-            }
-
-            .card__content {
-                display: flex; 
-                align-items: first baseline;
-            }
-
-            .fa-solid { 
-                height: fit-content; 
-                width: fit-content; 
-                margin-right: 14px;
-            }
-
-            .fa-store {
-                font-size: 0.94rem;
-            }
-
-            .card__text {
-                font-weight: 500; 
-                font-size: 0.82rem;
-                margin: 24px 0px;
-            }
-        }
-
-        &__card:active {
-            .fa-solid { color: $primary-color ; }
-        }
+    &__card:active {
+      .fa-solid {
+        color: $primary-color ;
+      }
     }
+  }
 }
 
 // ---------  RESTAURANTS SECTION  ---------
 
-.restaurants { 
-    background: $omf-lightgray; 
-    width: 100%;
+.restaurants {
+  background: $omf-lightgray;
+  width: 100%;
 }
 
 .resto {
-    padding: 30px 18px; 
+  padding: 30px 18px;
 
-    .resto__title {
-        @include section-title; 
+  .resto__title {
+    @include section-title;
+  }
+
+  .new {
+    @include new;
+  }
+
+  &__cardsblock {
+    @include aligny-xcenter;
+    row-gap: 14px;
+
+    @include card;
+
+    a {
+      width: fit-content;
     }
-
-    .new {
-        @include new ; 
-    }
-
-    &__cardsblock {
-        @include aligny-xcenter; 
-        row-gap: 14px;
-
-        @include card; 
-
-        a { width: fit-content; } 
-    }
+  }
 }
-
-
-
-
