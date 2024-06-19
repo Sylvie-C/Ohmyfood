@@ -1,167 +1,278 @@
-@use '../utils/variables' as * ; 
-@use '../utils/mixins' as * ; 
-@use '../base/normalize' ; 
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../normalize';
 
-.resto-page { 
+.resto-main {
 
-    display: flex; 
-    justify-content: center; 
+  display: flex;
+  justify-content: center;
 
-    .menu {
-        background: $omf-lightgray; 
-        border-radius: 30px ; 
-        width: 100%; 
-        padding: 12px ; 
+  .menu {
+    background: $omf-lightgray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 12px;
 
-        &__header {  
-            display: flex; 
-            justify-content: space-between; 
-        
-            margin: .6rem; 
-        }
+    &__header {
+      display: flex;
+      justify-content: space-between;
 
-        &__title {
-            font-size: 1.4rem ; 
-            font-family: 'Shrikhand' , serif ; 
-        }
-
-        &__fav {
-            @include heart-icons; 
-            &:hover {  // not clickable for this project (first version)
-                & > .heart-default {
-                    opacity: 0; 
-                    transition: opacity 300ms linear ; 
-                }
-        
-                & > .heart-like {
-                    animation: heart-visible 300ms linear ; 
-                    animation-fill-mode: forwards; 
-                }
-            }
-        }
-
-        &__btnfield {
-            width: 100%; 
-            @include alignx-xcenter; 
-        }
-
-        &__btn {
-            @include btn01; 
-            width: 180px; 
-        }
+      margin: .6rem;
     }
+
+    &__title {
+      font-size: 1.4rem;
+      font-family: 'Shrikhand', serif;
+    }
+
+    &__fav {
+      @include heart-icons;
+
+      &:hover {
+
+        // not clickable for this project (first version)
+        &>.heart-default {
+          opacity: 0;
+          transition: opacity 300ms linear;
+        }
+
+        &>.heart-like {
+          animation: heart-visible 300ms linear;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    &__btnfield {
+      width: 100%;
+      @include alignx-xcenter;
+    }
+
+    &__btn {
+      @include btn01;
+      width: 180px;
+    }
+  }
 }
 
-
 .dishblock {
-    &__title {
-        margin: 20px 0 0 0 ; 
-        color: $omf-gray; 
-        line-height: 30px; 
+  &__title {
+    margin: 20px 0 0 0;
+    color: $omf-gray;
+    line-height: 30px;
 
-        border-bottom: 3px $omf-lightgreen solid; 
-        width: 50px; 
-    }
-    
-    /*  HTML standards : <a> or <button> tag for future onclick event 
+    border-bottom: 3px $omf-lightgreen solid;
+    width: 50px;
+  }
+
+  /*  HTML standards : <a> or <button> tag for future onclick event 
         The user should click on a dish card to add this dish to his/her menu kart
         If button is used (<button class="card02"> instead of <div> for W3C rules) , 
         just uncomment following style. 
     */
-    // button {  
-    //     width: 100%; 
-    //     border:  none; 
-    //     background: none; 
-    //     cursor: pointer; 
-    // }
+  // button {  
+  //     width: 100%; 
+  //     border:  none; 
+  //     background: none; 
+  //     cursor: pointer; 
+  // }
 
-    &__cardsblock {
+  &__cardsblock {
+
     /*  Plates cards arrive from left of the screen on page load, 
         smoothly and with delay between them. 
     */
-        * { 
-            animation: slide01 1s ; 
-         }
-
-        // mixin to define delay of *100ms increment for each element in list -> for animation of 1s, 10 cards possible
-        @include cardsDelay ('.dish01' , '.dish02' , '.dish03' , '.dish04' , '.dish05' , '.dish06' , '.dish07' , '.dish08' , '.dish09' , '.dish10' ) ; 
+    * {
+      animation: slide01 1s;
     }
+
+    // mixin to define delay of *100ms increment for each element in list -> for animation of 1s, 10 cards possible
+    @include cardsDelay ('.dish01', '.dish02', '.dish03', '.dish04', '.dish05', '.dish06', '.dish07', '.dish08', '.dish09', '.dish10');
+  }
 }
 
 //  Card for 1 plate 
 .card02 {
-    @include card02 ; 
+  @include card02;
+  @include alignx;
 
-    @include alignx ; 
+  // check box animation
+  &:hover>&__check {
+    width: 20%; // default check container width before animation = 0
+    transition: all .5s ease-in-out;
+  }
 
-    // check box animation
-    &:hover > &__check { 
-        width: 20%; // default check container width before animation = 0
-        transition: all .5s ease-in-out ;
-    }
-    &:hover > &__info {
-        width: 80%; // default text container width before animation = 100% 
-        transition: all .5s ease-in-out; 
-    }
+  &:hover>&__info {
+    width: 80%; // default text container width before animation = 100% 
+    transition: all .5s ease-in-out;
+  }
 
-    &__info { 
-        width: 100% ;  // default text container width before animation
-        transition: all .5s ease-in-out ;
+  &__info {
+    width: 100%; // default text container width before animation
+    transition: all .5s ease-in-out;
 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: flex-end; // for price to be aligned with text at bottom of card 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; // for price to be aligned with text at bottom of card 
 
-        .card02__text {
-            width: 100%;
-            height: 100%; // to fit card height
-    
-            text-align: left; 
-            margin-left: .75rem; 
-    
-            overflow: hidden; 
-            white-space: nowrap; 
-        }
-        .card02__title {
-            font-size: 1.1rem; 
-            font-weight: 500;
-            margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
-    
-            overflow: hidden; 
-            white-space: nowrap; 
-            text-overflow: ellipsis; // dots if text cropped
-        }
-        .card02__subtitle {
-            font-size: .9rem; 
-            color: $omf-gray ; 
-    
-            margin-top: 0; // default margins top-bottom for <p> tags = 1rem
-    
-            overflow: hidden; 
-            white-space: nowrap; 
-            text-overflow: ellipsis; // dots if text cropped
-        }
-        .card02__price { 
-            margin: .75rem; 
-        } // default margins top-bottom for <p> tags = 1rem
+    .card02__text {
+      width: 100%;
+      height: 100%; // to fit card height
+
+      text-align: left;
+      margin-left: .75rem;
+
+      overflow: hidden;
+      white-space: nowrap;
     }
 
-    &__check {
-        width: 0%; // default check container width before animation/hover
-        transition: all .5s ease-in-out; 
+    .card02__title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.18rem; // default margins top-bottom for <p> tags = 1rem
 
-        // check icon style
-        .fa-circle-check { 
-            font-size: 1.4em ; 
-            color: white; 
-        }
-
-        height: 100%; 
-        border-radius: 0 16px 16px 0; 
-        background: $omf-lightgreen ; 
-
-        @include alignx-xycenter; 
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; // dots if text cropped
     }
+
+    .card02__subtitle {
+      font-size: .9rem;
+      color: $omf-gray ;
+
+      margin-top: 0; // default margins top-bottom for <p> tags = 1rem
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; // dots if text cropped
+    }
+
+    .card02__price {
+      margin: .75rem;
+    }
+  }
+
+  &__check {
+    width: 0%; // default check container width before animation/hover
+    transition: all .5s ease-in-out;
+
+    // check icon style
+    .fa-circle-check {
+      font-size: 1.4em;
+      color: white;
+    }
+
+    height: 100%;
+    border-radius: 0 16px 16px 0;
+    background: $omf-lightgreen ;
+
+    @include alignx-xycenter;
+  }
 
 }
 
+// -------  MEDIA QUERIES  -------
+@media (max-width: 768px) {
+
+  .card02 {
+
+    // check box animation
+    &:active>&__check {
+      width: 20%; // default check container width before animation = 0
+      transition: all .5s ease-in-out;
+    }
+
+    &:active>&__info {
+      width: 80%; // default text container width before animation = 100% 
+      transition: all .5s ease-in-out;
+    }
+  }
+
+
+
+
+
+  .header {
+    &__pix {
+
+      .restopix01 {
+        object-position: 0 60%;
+      }
+
+      .restopix02 {
+        object-position: 0 60%;
+      }
+
+      .restopix03 {
+        object-position: 0 82%;
+      }
+
+      .restopix04 {
+        object-position: 0 85%;
+      }
+    }
+
+  }
+
+  .resto-page {
+    .menu {
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
+      padding: 0 10%;
+
+      &__btn {
+        &:hover {
+          filter: opacity(.8);
+          box-shadow: $bshadow-dark ;
+          cursor: pointer;
+        }
+      }
+
+      &__title {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .resto-header {
+    &__pix {
+      height: 280px;
+
+      img {
+        height: 300px;
+      }
+
+      .restopix03 {
+        object-position: 0 70%;
+      }
+
+      .restopix04 {
+        object-position: 0 70%;
+      }
+    }
+
+  }
+
+  .resto-main {
+    .menu {
+      @include containerWidth;
+
+      &__header {
+        justify-content: center;
+      }
+
+      &__title {
+        margin-right: 60px;
+
+        .heart-default,
+        .heart-like {
+          right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,90 +1,97 @@
-@use "../utils/variables" as * ; 
-@use '../utils/mixins' as * ; 
+@use "../utils/variables" as *;
+@use '../utils/mixins' as *;
 
-.header { 
+.header {
 
-    // -------  HOME PAGE  -------
+  // -------  HOME PAGE  -------
 
-    &__title {
-        font-family: shrikhand , serif ; 
-        font-size: 24px; 
-        text-align: center; 
+  &__title {
+    font-family: shrikhand, serif;
+    font-size: 24px;
+    text-align: center;
 
-        padding: 18px 0 6px 0;
-        margin: 0;         
+    padding: 18px 0 6px 0;
+    margin: 0;
+  }
+
+  &__location {
+    @include alignx-xycenter;
+    height: 44px;
+    background: #f0f0f0;
+    box-shadow: #b8b8b8 0 8px 6px -6px inset;
+
+    form {
+      @include alignx-ycenter;
+
+      button {
+        @include alignx-ycenter;
+      }
+    }
+  }
+
+  &__location * {
+    color: $omf-gray ;
+
+    // for button and input
+    border: none;
+    background: none;
+  }
+
+  &__location--icon {
+    width: 12px;
+    height: 20px;
+    margin: 0 6px;
+    opacity: 0.8;
+  }
+
+  &__location--text {
+    font-family: roboto, sans-serif;
+    font-weight: bolder;
+    font-size: .85rem;
+  }
+
+  input {
+    width: 120px;
+  }
+
+  input::placeholder {
+    opacity: 1;
+  }
+
+
+  // -------  RESTAURANT PAGES  -------
+
+  &__link {
+    position: absolute;
+    margin-left: 14px;
+    margin-top: 14px;
+  }
+
+  &__pix {
+    width: 100%;
+    height: 210px;
+
+    // for menu over picture
+    position: relative;
+    z-index: -10;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 260px;
     }
 
-    &__location {
-        @include alignx-xycenter; 
-        height: 44px; 
-        background: #f0f0f0 ; 
-        box-shadow: #b8b8b8 0 8px 6px -6px inset ;
-    
-        form {
-            @include alignx-ycenter;
-
-            button {
-                @include alignx-ycenter; 
-            }
-        }
+    // Default header pictures position
+    .restopix02 {
+      object-position: 0 80%;
     }
 
-    &__location * {
-        color: $omf-gray ;  
-
-        // for button and input
-        border: none; 
-        background: none; 
+    .restopix03 {
+      object-position: 0%;
     }
 
-    &__location--icon {
-        width: 12px; 
-        height:20px; 
-        margin: 0 6px; 
-        opacity: 0.8; 
+    .restopix04 {
+      object-position: -30px -30px;
     }
-
-    &__location--text {
-        font-family: roboto, sans-serif;   
-        font-weight: bolder;    
-        font-size: .85rem; 
-    }
-
-    input {
-        width: 120px;
-    }
-
-    input::placeholder {
-        opacity: 1;
-    }
-
-    // -------  RESTAURANT PAGES  -------
-    &__link {
-        position: absolute; 
-        margin-left: 14px; 
-        margin-top: 14px; 
-    }
-
-    &__pix {
-        width: 100%; 
-        height: 210px; 
-
-        // for menu over picture
-        position: relative; 
-        z-index: -10; 
-        
-        img {
-            object-fit: cover; 
-            width: 100%; 
-            height: 260px;
-        }
-
-        // Default header pictures position
-        .restopix02 { object-position: 0 80%; }
-        .restopix03 { object-position: 0% ; }
-        .restopix04 { object-position: -30px -30px; }
-    }
+  }
 }
-
-
-

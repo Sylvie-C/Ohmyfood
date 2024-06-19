@@ -1,19 +1,21 @@
 // DESIGN SYSTEM
 
 // Colors
-$omf-gray: #4d4d4d ; 
-$omf-lightgray: #f7f7f7; 
+$omf-gray: #4d4d4d;
+$omf-lightgray: #f7f7f7;
 
-$omf-blue: #003A68 ; 
-$omf-lightblue: #89C8FA ; 
+$omf-blue: #003A68;
+$omf-lightblue: #89C8FA;
 
-$omf-darkgreen: #008766 ; 
+$omf-darkgreen: #008766;
 $omf-lightgreen: #99e2d0; // or rgba (153, 226, 208, 1)
 
-$primary-color: #9356DC; 
-$second-color: #FF79DA; 
+$primary-color: #9356DC;
+$second-color: #FF79DA;
 
 // box shadow effect
-$bshadow: 0 .37rem .6rem rgba(77, 77, 77, 0.18); 
-$bshadow-dark: 0 .2rem .8rem rgba(0, 0, 0, 0.5) ;
+$bshadow: 0 .37rem .6rem rgba(77, 77, 77, 0.18);
+$bshadow-dark: 0 .2rem .8rem rgba(0, 0, 0, 0.5);
 
+// loader animation duration
+$loader-duration: 1.5s;

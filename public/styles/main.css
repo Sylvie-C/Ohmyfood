@@ -12,12 +12,12 @@
   font-family: roboto;
   src: url("../../../public/fonts/roboto.ttf");
 }
-body {
-  margin: 0;
+.noscroll {
+  animation: 1.5s noscroll linear;
 }
 
-.noscroll {
-  animation: 2s noscroll linear;
+body {
+  margin: 0;
 }
 
 body * {
@@ -34,10 +34,12 @@ body * a {
   color: black;
 }
 
-/* 
-    Keyframes animations in this file. 
-    Other animations like transitions can be found in _mixins.scss file. 
-*/
+@media (min-width: 1440px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+}
 @keyframes noscroll {
   0% {
     overflow: hidden;
@@ -94,12 +96,12 @@ body * a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader-bckgd 2s ease-out;
+  animation: loader-bckgd 1.5s ease-out;
   animation-fill-mode: forwards;
 }
 .loader__img {
   width: 50px;
-  animation: loader-img 2s ease-out;
+  animation: loader-img 1.5s ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -147,21 +149,21 @@ body * a {
   cursor: pointer;
 }
 
-.fonct {
+.fonctionnement {
   padding: 24px 18px 60px 18px;
 }
-.fonct__title {
+.fonctionnement__title {
   font-weight: bold;
   font-size: 1.25rem;
 }
-.fonct__cardsblock {
+.fonctionnement__cardsblock {
   margin-left: 10px;
   row-gap: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.fonct__cardsblock__card {
+.fonctionnement__cardsblock__card {
   display: flex;
   align-items: center;
   -moz-column-gap: 10px;
@@ -171,7 +173,7 @@ body * a {
   background: #f7f7f7;
   box-shadow: 0 0.37rem 0.6rem rgba(77, 77, 77, 0.18);
 }
-.fonct__cardsblock__card .card__nb {
+.fonctionnement__cardsblock__card .card__nb {
   color: white;
   font-size: 0.7rem;
   background: #9356DC;
@@ -180,26 +182,26 @@ body * a {
   position: relative;
   left: -10px;
 }
-.fonct__cardsblock__card .card__content {
+.fonctionnement__cardsblock__card .card__content {
   display: flex;
   align-items: first baseline;
 }
-.fonct__cardsblock__card .fa-solid {
+.fonctionnement__cardsblock__card .fa-solid {
   height: -moz-fit-content;
   height: fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-right: 14px;
 }
-.fonct__cardsblock__card .fa-store {
+.fonctionnement__cardsblock__card .fa-store {
   font-size: 0.94rem;
 }
-.fonct__cardsblock__card .card__text {
+.fonctionnement__cardsblock__card .card__text {
   font-weight: 500;
   font-size: 0.82rem;
   margin: 24px 0px;
 }
-.fonct__cardsblock__card:active .fa-solid {
+.fonctionnement__cardsblock__card:active .fa-solid {
   color: #9356DC;
 }
 
@@ -280,7 +282,8 @@ body * a {
   align-items: center;
   position: relative;
 }
-.resto__cardsblock .card__fav .heart-default, .resto__cardsblock .card__fav .heart-like {
+.resto__cardsblock .card__fav .heart-default,
+.resto__cardsblock .card__fav .heart-like {
   width: 22px;
   position: absolute;
   right: 10px;
@@ -311,71 +314,139 @@ body * a {
   width: fit-content;
 }
 
-.resto-page {
+@media (min-width: 768px) {
+  .search {
+    row-gap: 24px;
+  }
+  .search__title {
+    font-family: roboto;
+    font-size: 2.2rem;
+  }
+  .search__button {
+    margin: 0;
+  }
+  .search__button:hover {
+    filter: opacity(0.8);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  .resto__cardsblock {
+    flex-direction: row;
+    flex-wrap: wrap;
+    -moz-column-gap: 10%;
+         column-gap: 10%;
+    row-gap: 44px;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement-restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .fonctionnement {
+    width: 1000px;
+  }
+  .fonctionnement__cardsblock {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .restaurants {
+    display: flex;
+    justify-content: center;
+  }
+  .resto {
+    width: 1000px;
+  }
+  .resto__cardsblock {
+    -moz-column-gap: 3%;
+         column-gap: 3%;
+    justify-content: space-between;
+  }
+  .resto__cardsblock .card {
+    width: 450px;
+  }
+  .resto__cardsblock .card .pix01 {
+    -o-object-position: 0 70%;
+       object-position: 0 70%;
+  }
+  .resto__cardsblock .card .pix03 {
+    -o-object-position: 0 80%;
+       object-position: 0 80%;
+  }
+  .resto__cardsblock .card .pix04 {
+    -o-object-position: 0 74%;
+       object-position: 0 74%;
+  }
+}
+.resto-main {
   display: flex;
   justify-content: center;
 }
-.resto-page .menu {
+.resto-main .menu {
   background: #f7f7f7;
   border-radius: 30px;
   width: 100%;
   padding: 12px;
 }
-.resto-page .menu__header {
+.resto-main .menu__header {
   display: flex;
   justify-content: space-between;
   margin: 0.6rem;
 }
-.resto-page .menu__title {
+.resto-main .menu__title {
   font-size: 1.4rem;
   font-family: "Shrikhand", serif;
 }
-.resto-page .menu__fav {
+.resto-main .menu__fav {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.resto-page .menu__fav .heart-default, .resto-page .menu__fav .heart-like {
+.resto-main .menu__fav .heart-default,
+.resto-main .menu__fav .heart-like {
   width: 22px;
   position: absolute;
   right: 10px;
 }
-.resto-page .menu__fav .heart-default {
+.resto-main .menu__fav .heart-default {
   fill: transparent;
   stroke: black;
   stroke-width: 2;
   opacity: 1;
   transition: opacity 300ms linear;
 }
-.resto-page .menu__fav .heart-like {
+.resto-main .menu__fav .heart-like {
   opacity: 0;
   transition: opacity 300ms linear;
 }
-.resto-page .menu__fav:hover > .heart-default {
+.resto-main .menu__fav:hover > .heart-default {
   cursor: pointer;
   opacity: 0;
   transition: opacity 300ms linear;
 }
-.resto-page .menu__fav:hover > .heart-like {
+.resto-main .menu__fav:hover > .heart-like {
   cursor: pointer;
   opacity: 1;
   transition: opacity 300ms linear;
 }
-.resto-page .menu__fav:hover > .heart-default {
+.resto-main .menu__fav:hover > .heart-default {
   opacity: 0;
   transition: opacity 300ms linear;
 }
-.resto-page .menu__fav:hover > .heart-like {
+.resto-main .menu__fav:hover > .heart-like {
   animation: heart-visible 300ms linear;
   animation-fill-mode: forwards;
 }
-.resto-page .menu__btnfield {
+.resto-main .menu__btnfield {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.resto-page .menu__btn {
+.resto-main .menu__btn {
   border: none;
   border-radius: 100px;
   box-shadow: 0 0.37rem 0.6rem rgba(77, 77, 77, 0.18);
@@ -390,7 +461,7 @@ body * a {
   transition: all 300ms ease-in-out;
   width: 180px;
 }
-.resto-page .menu__btn:active {
+.resto-main .menu__btn:active {
   filter: opacity(0.8);
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -398,10 +469,10 @@ body * a {
 
 .dishblock {
   /*  HTML standards : <a> or <button> tag for future onclick event 
-      The user should click on a dish card to add this dish to his/her menu kart
-      If button is used (<button class="card02"> instead of <div> for W3C rules) , 
-      just uncomment following style. 
-  */
+        The user should click on a dish card to add this dish to his/her menu kart
+        If button is used (<button class="card02"> instead of <div> for W3C rules) , 
+        just uncomment following style. 
+    */
 }
 .dishblock__title {
   margin: 20px 0 0 0;
@@ -516,6 +587,75 @@ body * a {
   color: white;
 }
 
+@media (max-width: 768px) {
+  .card02:active > .card02__check {
+    width: 20%;
+    transition: all 0.5s ease-in-out;
+  }
+  .card02:active > .card02__info {
+    width: 80%;
+    transition: all 0.5s ease-in-out;
+  }
+  .header__pix .restopix01 {
+    -o-object-position: 0 60%;
+       object-position: 0 60%;
+  }
+  .header__pix .restopix02 {
+    -o-object-position: 0 60%;
+       object-position: 0 60%;
+  }
+  .header__pix .restopix03 {
+    -o-object-position: 0 82%;
+       object-position: 0 82%;
+  }
+  .header__pix .restopix04 {
+    -o-object-position: 0 85%;
+       object-position: 0 85%;
+  }
+  .resto-page .menu {
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+  }
+  .resto-page .menu__btn:hover {
+    filter: opacity(0.8);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+  .resto-page .menu__title {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .resto-header__pix {
+    height: 280px;
+  }
+  .resto-header__pix img {
+    height: 300px;
+  }
+  .resto-header__pix .restopix03 {
+    -o-object-position: 0 70%;
+       object-position: 0 70%;
+  }
+  .resto-header__pix .restopix04 {
+    -o-object-position: 0 70%;
+       object-position: 0 70%;
+  }
+  .resto-main .menu {
+    width: 1000px;
+  }
+  .resto-main .menu__header {
+    justify-content: center;
+  }
+  .resto-main .menu__title {
+    margin-right: 60px;
+  }
+  .resto-main .menu__title .heart-default,
+  .resto-main .menu__title .heart-like {
+    right: 0;
+  }
+}
 .header__title {
   font-family: shrikhand, serif;
   font-size: 24px;
@@ -624,127 +764,7 @@ body * a {
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
-  .header__location {
-    box-shadow: none;
-  }
-  .search {
-    row-gap: 24px;
-  }
-  .search__title {
-    font-family: roboto;
-    font-size: 2.2rem;
-  }
-  .search__button {
-    margin: 0;
-  }
-  .search__button:hover {
-    filter: opacity(0.8);
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-  }
-  .resto__cardsblock {
-    flex-direction: row;
-    flex-wrap: wrap;
-    -moz-column-gap: 10%;
-         column-gap: 10%;
-    row-gap: 44px;
-    justify-content: center;
-  }
-  .header__pix .restopix01 {
-    -o-object-position: 0 60%;
-       object-position: 0 60%;
-  }
-  .header__pix .restopix02 {
-    -o-object-position: 0 60%;
-       object-position: 0 60%;
-  }
-  .header__pix .restopix03 {
-    -o-object-position: 0 82%;
-       object-position: 0 82%;
-  }
-  .header__pix .restopix04 {
-    -o-object-position: 0 85%;
-       object-position: 0 85%;
-  }
-  .resto-page .menu {
-    max-width: 850px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 10%;
-  }
-  .resto-page .menu__btn:hover {
-    filter: opacity(0.8);
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-  }
-  .resto-page .menu__title {
-    font-size: 1.6rem;
-  }
-  .card02 {
-    overflow: hidden;
-    width: 100%;
-    height: 70px;
-    background-color: white;
-    border-radius: 16px;
-    margin: 6px 0;
-    filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.1));
-    display: flex;
-  }
-  .card02:hover > .card02__check {
-    width: 20%;
-    transition: all 0.5s ease-in-out;
-  }
-  .card02:hover > .card02__info {
-    width: 80%;
-    transition: all 0.5s ease-in-out;
-  }
-}
 @media (min-width: 1024px) {
-  .header,
-  .footer {
-    min-width: 1024px;
-  }
-  .fonctionnement-restaurants {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .fonct {
-    width: 1000px;
-  }
-  .fonct__cardsblock {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .restaurants {
-    display: flex;
-    justify-content: center;
-  }
-  .resto {
-    width: 1000px;
-  }
-  .resto__cardsblock {
-    -moz-column-gap: 3%;
-         column-gap: 3%;
-    justify-content: space-between;
-  }
-  .resto__cardsblock .card {
-    width: 450px;
-  }
-  .resto__cardsblock .card .pix01 {
-    -o-object-position: 0 70%;
-       object-position: 0 70%;
-  }
-  .resto__cardsblock .card .pix03 {
-    -o-object-position: 0 80%;
-       object-position: 0 80%;
-  }
-  .resto__cardsblock .card .pix04 {
-    -o-object-position: 0 74%;
-       object-position: 0 74%;
-  }
   .footer {
     padding: 40px 20px 16px 20px;
     flex-direction: row-reverse;
@@ -770,38 +790,5 @@ body * a {
   }
   .footer__linksblock a:hover {
     text-decoration: underline;
-  }
-  .header__pix {
-    height: 280px;
-  }
-  .header__pix img {
-    height: 300px;
-  }
-  .header__pix .restopix03 {
-    -o-object-position: 0 70%;
-       object-position: 0 70%;
-  }
-  .header__pix .restopix04 {
-    -o-object-position: 0 70%;
-       object-position: 0 70%;
-  }
-  .resto-page .menu {
-    width: 1000px;
-  }
-  .resto-page .menu__header {
-    justify-content: center;
-  }
-  .resto-page .menu__title {
-    margin-right: 60px;
-  }
-  .resto-page .menu__title .heart-default,
-  .resto-page .menu__title .heart-like {
-    right: 0;
-  }
-}
-@media (min-width: 1440px) {
-  body {
-    display: flex;
-    justify-content: center;
   }
 }
