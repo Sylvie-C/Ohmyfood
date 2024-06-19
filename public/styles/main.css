@@ -238,6 +238,7 @@ body * a {
   background-color: white;
   border-radius: 15px;
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  transition: all 0.2s ease-in-out;
 }
 .restaurants__cardsblock .card__pix {
   -o-object-fit: cover;
@@ -262,6 +263,10 @@ body * a {
 .restaurants__cardsblock .card .pix04 {
   -o-object-position: 0 95%;
      object-position: 0 95%;
+}
+.restaurants__cardsblock .card:hover {
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.5);
+  transform: scale(0.98);
 }
 .restaurants__cardsblock .card__info {
   display: flex;
