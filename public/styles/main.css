@@ -755,8 +755,8 @@ body * a {
        object-position: 10% bottom;
   }
   .resto-header__pix .restopix04 {
-    -o-object-position: 0 -100px;
-       object-position: 0 -100px;
+    -o-object-position: 0 110%;
+       object-position: 0 110%;
   }
 }
 @media (min-width: 768px) {
@@ -769,8 +769,8 @@ body * a {
        object-position: 0 80%;
   }
   .resto-header__pix .restopix04 {
-    -o-object-position: 0 -220px;
-       object-position: 0 -220px;
+    -o-object-position: 0 80%;
+       object-position: 0 80%;
   }
 }
 @media (min-width: 1024px) {
@@ -779,18 +779,14 @@ body * a {
        object-position: 0 67%;
   }
   .resto-header__pix .restopix04 {
-    -o-object-position: 0 -300px;
-       object-position: 0 -300px;
+    -o-object-position: 0 70%;
+       object-position: 0 70%;
   }
 }
 @media (min-width: 1440px) {
   .resto-header__pix .restopix03 {
     -o-object-position: 0 58%;
        object-position: 0 58%;
-  }
-  .resto-header__pix .restopix04 {
-    -o-object-position: -30px -500px;
-       object-position: -30px -500px;
   }
 }
 .footer {
