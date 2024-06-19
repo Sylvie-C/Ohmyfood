@@ -42,9 +42,9 @@ body * {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   body {
-    display: flex;
-    justify-content: center;
+    max-width: 1440px;
+    margin: auto;
   }
 }

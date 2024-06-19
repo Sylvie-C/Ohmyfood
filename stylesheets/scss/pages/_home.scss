@@ -3,7 +3,6 @@
 @use '../utils/animations';
 
 
-// ------ LOADER -------
 .loader {
   width: 100%;
   height: 100%;
@@ -28,7 +27,7 @@
   }
 }
 
-// -------  SEARCH SECTION  -------
+
 .search {
   @include aligny-xcenter;
   row-gap: 10px;
@@ -60,26 +59,32 @@
   }
 }
 
-// ---------  "FONCTIONNEMENT" SECTION  ---------
+
+.fonctionnement,
+.restaurants__container {
+  padding: 20px;
+}
+
+
 .fonctionnement {
-  padding: 24px 18px 60px 18px;
+  max-width: 1000px;
+  margin: auto;
 
   &__title {
-    @include section-title;
+    @include homeSection-title;
   }
 
   &__cardsblock {
-
-    margin-left: 10px;
-    row-gap: 18px;
-
     @include aligny-xcenter;
+
+    row-gap: 18px;
 
     &__card {
       @include alignx-ycenter;
 
       column-gap: 10px;
-      width: 260px;
+      width: $homeCard-width;
+      height: 60px;
 
       border-radius: 15px;
       background: $omf-lightgray;
@@ -115,29 +120,23 @@
       .card__text {
         font-weight: 500;
         font-size: 0.82rem;
-        margin: 24px 0px;
-      }
-    }
-
-    &__card:active {
-      .fa-solid {
-        color: $primary-color ;
       }
     }
   }
 }
 
-// ---------  RESTAURANTS SECTION  ---------
+
 .restaurants {
   background: $omf-lightgray;
   width: 100%;
-}
 
-.resto {
-  padding: 30px 18px;
+  &__container {
+    max-width: 1000px;
+    margin: auto;
+  }
 
-  .resto__title {
-    @include section-title;
+  &__title {
+    @include homeSection-title;
   }
 
   .new {
@@ -146,17 +145,72 @@
 
   &__cardsblock {
     @include aligny-xcenter;
-    row-gap: 14px;
-
-    @include card;
 
     a {
-      width: fit-content;
+      width: 100%;
     }
+
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+
+      &__pix {
+        object-fit: cover;
+
+        width: 100%;
+        height: 148px;
+
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      // pictures framing
+      .pix01 {
+        object-position: 0 100%;
+      }
+
+      .pix02 {
+        object-position: 0 61.5%;
+      }
+
+      .pix03 {
+        object-position: 0 100%;
+      }
+
+      .pix04 {
+        object-position: 0 95%;
+      }
+
+      &__info {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 14px 10px;
+      }
+
+      &__info * {
+        margin: 0;
+        line-height: 1.3rem;
+      }
+
+      &__subtitle {
+        color: $omf-gray;
+        font-size: 0.9rem;
+      }
+
+      &__fav {
+        @include heart-icons;
+      }
+    }
+
+    row-gap: 14px;
   }
 }
 
+
 // -------  MEDIA QUERIES  -------
+
 @media (min-width: 768px) {
 
   .search {
@@ -178,47 +232,33 @@
     }
   }
 
-  .resto {
+  .fonctionnement {
     &__cardsblock {
       flex-direction: row;
-      flex-wrap: wrap;
-
-      column-gap: 10%;
-      row-gap: 44px;
       justify-content: center;
+      column-gap: 4%;
+    }
+  }
+
+  .restaurants {
+    &__cardsblock {
+      row-gap: 44px;
+      column-gap: 4%;
+
+      display: grid;
+      grid-template-columns: 48% 48%;
     }
   }
 }
 
 @media (min-width: 1024px) {
-  .fonctionnement-restaurants {
-    @include aligny-xcenter;
-    width: 100%;
-  }
-
-  .fonctionnement {
-    @include containerWidth;
-
-    &__cardsblock {
-      flex-direction: row; // default responsive : flexbox column
-      justify-content: space-between;
-    }
-  }
 
   .restaurants {
-    @include alignx-xcenter;
-  }
-
-  .resto {
-    @include containerWidth;
-
     &__cardsblock {
 
-      column-gap: 3%;
-      justify-content: space-between;
-
       .card {
-        width: 450px;
+        min-width: 350px;
+        max-width: 450px;
 
         .pix01 {
           object-position: 0 70%;

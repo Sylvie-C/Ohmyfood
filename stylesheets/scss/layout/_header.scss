@@ -1,10 +1,8 @@
 @use "../utils/variables" as *;
 @use '../utils/mixins' as *;
 
-.header {
-
-  // -------  HOME PAGE  -------
-
+.header,
+.resto-header {
   &__title {
     font-family: shrikhand, serif;
     font-size: 24px;
@@ -13,7 +11,10 @@
     padding: 18px 0 6px 0;
     margin: 0;
   }
+}
 
+// homepage header
+.header {
   &__location {
     @include alignx-xycenter;
     height: 44px;
@@ -57,10 +58,10 @@
   input::placeholder {
     opacity: 1;
   }
+}
 
-
-  // -------  RESTAURANT PAGES  -------
-
+// restaurant page header
+.resto-header {
   &__link {
     position: absolute;
     margin-left: 14px;
@@ -92,6 +93,73 @@
 
     .restopix04 {
       object-position: -30px -30px;
+    }
+  }
+}
+
+
+// -------  MEDIA QUERIES  -------
+
+@media (min-width: 480px) {
+  .resto-header {
+    &__pix {
+      .restopix02 {
+        object-position: 0 70%;
+      }
+
+      .restopix03 {
+        object-position: 10% bottom;
+      }
+
+      .restopix04 {
+        object-position: 0 -100px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .resto-header {
+    &__pix {
+      .restopix02 {
+        object-position: 0 60%;
+      }
+
+      .restopix03 {
+        object-position: 0 80%;
+      }
+
+      .restopix04 {
+        object-position: 0 -220px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .resto-header {
+    &__pix {
+      .restopix03 {
+        object-position: 0 67%;
+      }
+
+      .restopix04 {
+        object-position: 0 -300px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .resto-header {
+    &__pix {
+      .restopix03 {
+        object-position: 0 58%;
+      }
+
+      .restopix04 {
+        object-position: -30px -500px;
+      }
     }
   }
 }

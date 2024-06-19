@@ -8,6 +8,9 @@
   justify-content: center;
 
   .menu {
+    display: flex;
+    flex-direction: column;
+
     background: $omf-lightgray;
     border-radius: 30px;
     width: 100%;
@@ -16,7 +19,6 @@
     &__header {
       display: flex;
       justify-content: space-between;
-
       margin: .6rem;
     }
 
@@ -96,17 +98,6 @@
   @include card02;
   @include alignx;
 
-  // check box animation
-  &:hover>&__check {
-    width: 20%; // default check container width before animation = 0
-    transition: all .5s ease-in-out;
-  }
-
-  &:hover>&__info {
-    width: 80%; // default text container width before animation = 100% 
-    transition: all .5s ease-in-out;
-  }
-
   &__info {
     width: 100%; // default text container width before animation
     transition: all .5s ease-in-out;
@@ -169,28 +160,54 @@
     @include alignx-xycenter;
   }
 
+  // check box animation
+  &:active>&__check {
+    width: 20%; // default check container width before animation = 0
+    transition: all .5s ease-in-out;
+  }
+
+  &:active>&__info {
+    width: 80%; // default text container width before animation = 100% 
+    transition: all .5s ease-in-out;
+  }
 }
 
+
 // -------  MEDIA QUERIES  -------
-@media (max-width: 768px) {
+
+@media (min-width: 768px) {
+
+  .resto-main {
+    .menu {
+      width: $widthContent;
+
+      .dishblock {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
 
   .card02 {
 
     // check box animation
-    &:active>&__check {
+    &:hover>&__check {
       width: 20%; // default check container width before animation = 0
       transition: all .5s ease-in-out;
     }
 
-    &:active>&__info {
+    &:hover>&__info {
       width: 80%; // default text container width before animation = 100% 
       transition: all .5s ease-in-out;
     }
   }
 
+}
 
 
 
+
+/* @media (max-width: 768px) {
 
   .header {
     &__pix {
@@ -214,11 +231,9 @@
 
   }
 
-  .resto-page {
+  .resto-main {
     .menu {
       max-width: 850px;
-      display: flex;
-      flex-direction: column;
       padding: 0 10%;
 
       &__btn {
@@ -234,7 +249,7 @@
       }
     }
   }
-}
+} */
 
 @media (min-width: 1024px) {
 
@@ -259,6 +274,12 @@
 
   .resto-main {
     .menu {
+      max-width: $widthContent;
+    }
+  }
+
+  /*   .resto-main {
+    .menu {
       @include containerWidth;
 
       &__header {
@@ -274,5 +295,5 @@
         }
       }
     }
-  }
+  } */
 }
