@@ -73,26 +73,18 @@
     fill: transparent;
     stroke: black;
     stroke-width: 2;
-    opacity: 1;
-    transition: opacity 300ms linear;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .heart-like {
     opacity: 0;
     transition: opacity 300ms linear;
-  }
 
-  &:hover {
-
-    // not clickable for this project (first version)
-    &>.heart-default {
+    &:hover {
       cursor: pointer;
-      opacity: 0;
-    }
-
-    &>.heart-like {
-      cursor: pointer;
-      opacity: 1;
     }
   }
 }

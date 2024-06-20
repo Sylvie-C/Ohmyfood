@@ -29,20 +29,6 @@
 
     &__fav {
       @include heart-icons;
-
-      &:hover {
-
-        // not clickable for this project (first version)
-        &>.heart-default {
-          opacity: 0;
-          transition: opacity 300ms linear;
-        }
-
-        &>.heart-like {
-          animation: heart-visible 300ms linear;
-          animation-fill-mode: forwards;
-        }
-      }
     }
 
     &__btnfield {
@@ -204,53 +190,6 @@
 
 }
 
-
-
-
-/* @media (max-width: 768px) {
-
-  .header {
-    &__pix {
-
-      .restopix01 {
-        object-position: 0 60%;
-      }
-
-      .restopix02 {
-        object-position: 0 60%;
-      }
-
-      .restopix03 {
-        object-position: 0 82%;
-      }
-
-      .restopix04 {
-        object-position: 0 85%;
-      }
-    }
-
-  }
-
-  .resto-main {
-    .menu {
-      max-width: 850px;
-      padding: 0 10%;
-
-      &__btn {
-        &:hover {
-          filter: opacity(.8);
-          box-shadow: $bshadow-dark ;
-          cursor: pointer;
-        }
-      }
-
-      &__title {
-        font-size: 1.6rem;
-      }
-    }
-  }
-} */
-
 @media (min-width: 1024px) {
 
   .resto-header {
@@ -277,23 +216,4 @@
       max-width: $widthContent;
     }
   }
-
-  /*   .resto-main {
-    .menu {
-      @include containerWidth;
-
-      &__header {
-        justify-content: center;
-      }
-
-      &__title {
-        margin-right: 60px;
-
-        .heart-default,
-        .heart-like {
-          right: 0;
-        }
-      }
-    }
-  } */
 }

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="public/styles/main.css" >
     <!-- CDN for Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
+
+    <script type="module" src="/scripts/index.js" defer></script>
 </head>
 <body class="body noscroll">
 
@@ -31,118 +33,119 @@
             </section>
 
             <div class="fonctionnement-restaurants">
-                <section class="fonctionnement">
-                    <h2 class="fonctionnement__title">Fonctionnement</h2>
-                    <div class="fonctionnement__cardsblock">
-                      <div class="fonctionnement__cardsblock__card">
-                        <span class="card__nb">1</span>
-                        <div class="card__content">
-                            <span class="fa-solid fa-mobile-screen-button" aria-hidden="true"></span>
-                            <p class="card__text">Choisissez un restaurant</p>
-                        </div>
-                      </div>
-  
-                      <div class="fonctionnement__cardsblock__card">
-                        <span class="card__nb">2</span>
-                        <div class="card__content">
-                            <span class="fa-solid fa-list-ul" aria-hidden="true"></span>
-                            <p class="card__text">Composez votre menu</p>
-                        </div>
-                        </div>
-                      
-                      <div class="fonctionnement__cardsblock__card">
-                        <span class="card__nb">3</span>
-                        <div class="card__content">
-                            <span class="fa-solid fa-store" aria-hidden="true"></span>
-                            <p class="card__text">Dégustez au restaurant</p>
-                        </div>
+              <section class="fonctionnement">
+                  <h2 class="fonctionnement__title">Fonctionnement</h2>
+                  <div class="fonctionnement__cardsblock">
+                    <div class="fonctionnement__cardsblock__card">
+                      <span class="card__nb">1</span>
+                      <div class="card__content">
+                          <span class="fa-solid fa-mobile-screen-button" aria-hidden="true"></span>
+                          <p class="card__text">Choisissez un restaurant</p>
                       </div>
                     </div>
-                </section>
-                <section class="restaurants">
-                  <div class="restaurants__container">
-                    <h2 id="restocards" class="restaurants__title">Restaurants</h2>
-                    <div class="restaurants__cardsblock">
-                        <a href="restaurants/palette-du-gout.html">
-                          <div class="card">
-                              <img class="card__pix pix01" src="public/images/restaurants/palette_du_gout.jpg" alt="Photo restaurant la palette du gout">
-                              <p class="new">Nouveau</p>
-                              <div class="card__info">
-                                  <div class="card__text">
-                                      <strong class="card__title">La palette du goût</strong>
-                                      <p class="card__subtitle">Ménilmontant</p>
-                                  </div>
-                                  <div class="card__fav">
-                                      <svg class="heart-default" viewBox="0 0 32 29.6">
-                                          <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                                            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-                                      </svg>
-                                      <img class="heart-like" src="public/images/icons/heart-like.svg" alt="icône cliquable">
-                                  </div>
-                              </div>
-                          </div>
-                        </a>
-        
-                        <a href="restaurants/note-enchantee.html">
-                          <div class="card">
-                              <img class="card__pix pix02" src="public/images/restaurants/note_enchantee.jpg" alt="Photo restaurant la note enchantée">
-                              <p class="new">Nouveau</p>
-                              <div class="card__info">
-                                  <div class="card__text">
-                                      <strong class="card__title">La note enchantée</strong>
-                                      <p class="card__subtitle">Charonne</p>
-                                  </div>
-                                  <div class="card__fav">
-                                      <svg class="heart-default" viewBox="0 0 32 29.6">
-                                          <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                                          c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-                                      </svg>
-                                      <img class="heart-like" src="public/images/icons/heart-like.svg" alt="icône cliquable">
-                                  </div>
-                              </div>
-                          </div>
-                        </a>
-        
-                        <a href="restaurants/a-la-francaise.html">
-                          <div class="card">
-                              <img class="card__pix pix03" src="public/images/restaurants/a_la_francaise.jpg" alt="Photo restaurant À la française">
-                              <div class="card__info">
-                                  <div class="card__text">
-                                      <strong class="card__title">À la française</strong>
-                                      <p class="card__subtitle">Cité Rouge</p>
-                                  </div>
-                                  <div class="card__fav">
-                                      <svg class="heart-default" viewBox="0 0 32 29.6">
-                                          <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                                            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-                                      </svg>
-                                      <img class="heart-like" src="public/images/icons/heart-like.svg" alt="icône cliquable">
-                                  </div>
-                              </div>
-                          </div>
-                        </a>
-        
-                        <a href="restaurants/delice-des-sens.html">
-                          <div class="card">
-                              <img class="card__pix pix04" src="public/images/restaurants/delice_des_sens.jpg" alt="Photo restaurant Délice des sens">
-                              <div class="card__info">
-                                  <div class="card__text">
-                                      <strong class="card__title">Délice des sens</strong>
-                                      <p class="card__subtitle">Folie-Méricourt</p>
-                                  </div>
-                                  <div class="card__fav">
-                                      <svg class="heart-default" viewBox="0 0 32 29.6">
-                                          <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
-                                            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
-                                      </svg>
-                                      <img class="heart-like" src="public/images/icons/heart-like.svg" alt="icône cliquable">
-                                  </div>
-                              </div>
-                          </div>
-                        </a>
+
+                    <div class="fonctionnement__cardsblock__card">
+                      <span class="card__nb">2</span>
+                      <div class="card__content">
+                          <span class="fa-solid fa-list-ul" aria-hidden="true"></span>
+                          <p class="card__text">Composez votre menu</p>
+                      </div>
+                      </div>
+                    
+                    <div class="fonctionnement__cardsblock__card">
+                      <span class="card__nb">3</span>
+                      <div class="card__content">
+                          <span class="fa-solid fa-store" aria-hidden="true"></span>
+                          <p class="card__text">Dégustez au restaurant</p>
+                      </div>
                     </div>
                   </div>
-                </section>
+              </section>
+
+              <section class="restaurants">
+                <div class="restaurants__container">
+                  <h2 id="restocards" class="restaurants__title">Restaurants</h2>
+                  <div class="restaurants__cardsblock">
+                    <a href="restaurants/palette-du-gout.html">
+                      <div class="card">
+                        <img class="card__pix pix01" src="public/images/restaurants/palette_du_gout.jpg" alt="Photo restaurant la palette du gout">
+                        <p class="new">Nouveau</p>
+                        <div class="card__info">
+                          <div class="card__text">
+                            <strong class="card__title">La palette du goût</strong>
+                            <p class="card__subtitle">Ménilmontant</p>
+                          </div>
+                          <div class="card__fav" >
+                            <svg class="heart-default" data-likeid="palette-du-gout" viewBox="0 0 32 29.6">
+                              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                            </svg>
+                            <img class="heart-like" data-likeid="palette-du-gout" src="public/images/icons/heart-like.svg" alt="icône cliquable">
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+      
+                    <a href="restaurants/note-enchantee.html">
+                      <div class="card">
+                        <img class="card__pix pix02" src="public/images/restaurants/note_enchantee.jpg" alt="Photo restaurant la note enchantée">
+                        <p class="new">Nouveau</p>
+                        <div class="card__info">
+                          <div class="card__text">
+                            <strong class="card__title">La note enchantée</strong>
+                            <p class="card__subtitle">Charonne</p>
+                          </div>
+                          <div class="card__fav">
+                            <svg class="heart-default" data-likeid="note-enchantee" viewBox="0 0 32 29.6">
+                              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                              c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                            </svg>
+                            <img class="heart-like" data-likeid="note-enchantee" src="public/images/icons/heart-like.svg" alt="icône cliquable">
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+      
+                    <a href="restaurants/a-la-francaise.html">
+                      <div class="card">
+                        <img class="card__pix pix03" src="public/images/restaurants/a_la_francaise.jpg" alt="Photo restaurant À la française">
+                        <div class="card__info">
+                          <div class="card__text">
+                            <strong class="card__title">À la française</strong>
+                            <p class="card__subtitle">Cité Rouge</p>
+                          </div>
+                          <div class="card__fav">
+                            <svg class="heart-default" data-likeid="a-la-francaise" viewBox="0 0 32 29.6">
+                              <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                                  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                            </svg>
+                            <img class="heart-like" data-likeid="a-la-francaise" src="public/images/icons/heart-like.svg" alt="icône cliquable">
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+      
+                    <a href="restaurants/delice-des-sens.html">
+                      <div class="card">
+                        <img class="card__pix pix04" src="public/images/restaurants/delice_des_sens.jpg" alt="Photo restaurant Délice des sens">
+                        <div class="card__info">
+                          <div class="card__text">
+                            <strong class="card__title">Délice des sens</strong>
+                            <p class="card__subtitle">Folie-Méricourt</p>
+                          </div>
+                          <div class="card__fav">
+                            <svg class="heart-default" data-likeid="delice-des-sens" viewBox="0 0 32 29.6">
+                                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                                  c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                            </svg>
+                            <img class="heart-like" data-likeid="delice-des-sens" src="public/images/icons/heart-like.svg" alt="icône cliquable">
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </section>
             </div>
         </main>
         
