@@ -1,20 +1,17 @@
 // import base styles for whole website
-@use 'base/normalize' ; 
+@use 'normalize';
 
 // import animations for whole website
-@use 'components/animations' ; 
+@use 'utils/animations';
 
 // import specific styles for home page
-@use 'pages/home' ; 
+@use 'pages/home';
 
 // import specific styles for restaurants pages
-@use 'pages/resto-pages' ; 
+@use 'pages/resto-pages';
 
 // import specific styles for header
-@use 'layout/header' ; 
+@use 'layout/header';
 
 // import specific styles for footer
-@use 'layout/footer' ; 
-
-// import media queries
-@use 'base/media-queries' ; 
+@use 'layout/footer';

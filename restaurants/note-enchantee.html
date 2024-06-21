@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La note enchantée</title>
 
-    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../public/styles/main.css">
     <!-- CDN for Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
+    <script type="module" src="/scripts/restaurant.js" defer></script>
 </head>
 <body class="body">
 
     <div class="body__container">
-        <header class="header">
-            <a class="header__link" href="../index.html" ><img src="../images/icons/arrow-left.svg" alt="" ></a>
-            <h1 class="header__title">ohmyfood</h1>  
-            <div class="header__pix"><img class="restopix02" src="../images/restaurants/note_enchantee.jpg" alt=""></div>
+        <header class="resto-header">
+            <a class="resto-header__link" href="../index.html" ><img src="../public/images/icons/arrow-left.svg" alt="" ></a>
+            <h1 class="resto-header__title">ohmyfood</h1>  
+            <div class="resto-header__pix"><img class="restopix02" src="../public/images/restaurants/note_enchantee.jpg" alt=""></div>
         </header>
-        <main class="resto-page">
+        <main class="resto-main">
              <div class="menu">
                 <div class="menu__header">
                     <h2 class="menu__title">La note enchantée</h2> 
                     <div class="menu__fav">
-                        <svg class="heart-default" viewBox="0 0 32 29.6">
+                        <svg class="heart-default" data-likeid="note-enchantee" viewBox="0 0 32 29.6">
                             <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
                               c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
                         </svg>
-                        <img class="heart-like" src="../images/icons/heart-like.svg" alt="icône cliquable">
+                        <img class="heart-like" data-likeid="note-enchantee" src="../public/images/icons/heart-like.svg" alt="icône cliquable">
                     </div>
                 </div>
 
