@@ -2,18 +2,26 @@ import {
   displayFavourites , 
   addFavourite , 
   deleteFavourite , 
-  getFavourites } from "./API_module.js"; 
+  getFavourites 
+} from "./API_module.js"; 
 
-  // localStorage.clear() ; 
+// localStorage.clear() ; 
 
 const container = document.querySelector(".restaurants__cardsblock") ; 
 const likeIcons = document.getElementsByClassName("heart-like") ; // "likes" html elts on page
 
 let favourites ; // current session 
-let favouritesStored = JSON.parse(localStorage.getItem("favourites")) ; // previous or next sessions
+let favouritesStored = JSON.parse(localStorage.getItem("favourites")) ; 
 
-if (favouritesStored) { favourites = favouritesStored ; }
-else { favourites = getFavourites() ; }
+if (favouritesStored) { 
+  favourites = favouritesStored ; 
+}
+else { 
+  favourites = getFavourites() ; 
+  favouritesStored = [] ; 
+}
+
+console.log ("localStorage on home page load : " , favouritesStored) ;
 
 displayFavourites (likeIcons , favouritesStored) ; // display "likes" on page load
 
@@ -30,24 +38,22 @@ container.addEventListener( "click" ,
     if (clickedEltID) { 
       event.preventDefault() ; // prevent page redirection of <a> tag
 
-      const isFavourite = (favourites.includes(clickedEltID)) ; 
+      const isFavourite = (favourites.includes(clickedEltID)) || (favouritesStored.includes(clickedEltID)) ; 
 
       if (isFavourite) {
-        deleteFavourite(clickedEltID) ; 
+        deleteFavourite(clickedEltID , favouritesStored) ; 
         clickedElt.style.opacity = 0 ; // update display "unlike"
         favourites = getFavourites() ; 
+
+        console.log ("favoris après delete (current session) : " , favourites) ; 
       }else{
-        addFavourite(clickedEltID) ; 
+        addFavourite(clickedEltID , favouritesStored) ; 
         clickedElt.style.opacity = 1 ; // update display "like"
         favourites = getFavourites() ; // updated current session "likes"
+
+        console.log ("favoris après add (current session) : " , favourites) ;  
+        console.log ("favoris localStorage après add : " , localStorage.getItem("favourites")) ; 
       }
-
-      console.log ("tableau de favoris local : " , favourites ) ; 
-
-      favouritesStored = JSON.stringify(favourites) ; 
-      localStorage.setItem("favourites" , favouritesStored) ; // update localStorage with updated "likes"
-
-      console.log ("tableau de favoris localStorage : " , favouritesStored) ; 
     }
   } 
 ) ; 

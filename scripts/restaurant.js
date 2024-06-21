@@ -5,10 +5,17 @@ const likesContainer = document.querySelector(".menu__fav") ;
 // localStorage.clear() ; 
 
 let favourites ; // current session 
-let favouritesStored = JSON.parse(localStorage.getItem("favourites")) ; // previous or next sessions
+let favouritesStored = JSON.parse(localStorage.getItem("favourites")) ; // next session
 
-if (favouritesStored) { favourites = favouritesStored ; }
-else { favourites = getFavourites() ; }
+if (favouritesStored) { 
+  favourites = favouritesStored ; 
+}
+else { 
+  favourites = getFavourites() ; 
+  favouritesStored = [] ; 
+}
+
+console.log ("localStorage on restaurant page load : " , favouritesStored) ;
 
 // display likes on page load
 displayFavourites(likesCollection , favourites) ; 
@@ -22,17 +29,20 @@ likesContainer.addEventListener ( "click" ,
     const isFavourite = (favourites.includes(clickedEltID)) ; 
 
     if (isFavourite) {
-      deleteFavourite(clickedEltID) ; 
+      deleteFavourite(clickedEltID , favouritesStored) ; 
       clickedElt.style.opacity = 0 ; // update display "unlike"
       favourites = getFavourites() ; 
+
+      console.log ("favourites localStorage from restaurant.js : " , localStorage.getItem("favourites")) ; 
+      console.log ("favourites local API from restaurant.js : " , favourites) ; 
     }else{
-      addFavourite(clickedEltID) ; 
+      addFavourite(clickedEltID , favouritesStored) ; 
       clickedElt.style.opacity = 1 ; // update display "like"
       favourites = getFavourites() ; 
-    }
 
-    const favouritesStored = JSON.stringify(favourites) ; 
-    localStorage.setItem("favourites" , favouritesStored) ; 
+      console.log ("favourites localStorage from restaurant.js : " , localStorage.getItem("favourites")) ; 
+      console.log ("favourites local API from restaurant.js : " , favourites) ; 
+    }
   }
 ) ; 
 
