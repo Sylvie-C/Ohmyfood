@@ -402,7 +402,7 @@ body * a {
 .resto-main .menu__fav .heart-like:hover {
   cursor: pointer;
 }
-.resto-main .menu__btnfield {
+.resto-main .menu__btnContainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -530,14 +530,6 @@ body * a {
   font-size: 1.4em;
   color: white;
 }
-.card02:active > .card02__check {
-  width: 20%;
-  transition: all 0.5s ease-in-out;
-}
-.card02:active > .card02__info {
-  width: 80%;
-  transition: all 0.5s ease-in-out;
-}
 
 @media (min-width: 768px) {
   .resto-main .menu {
@@ -546,14 +538,6 @@ body * a {
   .resto-main .menu .dishblock {
     width: 80%;
     margin: auto;
-  }
-  .card02:hover > .card02__check {
-    width: 20%;
-    transition: all 0.5s ease-in-out;
-  }
-  .card02:hover > .card02__info {
-    width: 80%;
-    transition: all 0.5s ease-in-out;
   }
 }
 @media (min-width: 1024px) {

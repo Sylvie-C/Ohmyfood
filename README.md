@@ -1,7 +1,6 @@
 # ohmyfood
 
-Ohmyfood est une entreprise de commande de repas en ligne. 
-Le concept permet aux utilisateurs de composer leur propre menu et de réduire leur temps d’attente dans les restaurants, car leur menu est préparé à l’avance. 
-Plus de perte de temps à consulter la carte !
-
-Le site propose donc les menus de plusieurs restaurants, permet la réservation en ligne et la composition de menus.
+Ohmyfood is an online meal ordering company. 
+The concept allows users to create their own menu and reduce waiting time in restaurants because orders are taken in advance. 
+No more time wasted consulting the menu!
+The website offers menus from several restaurants, allows online reservations, and menu customization.

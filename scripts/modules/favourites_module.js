@@ -19,7 +19,7 @@ export function displayFavourites (htmlObj , favArray) {
   }
 }
 
-// home page : current session "like" storage
+// home page : "like" storage
 let favourites = [] ; 
 
 export function addFavourite (item , favouritesStored) {
@@ -28,8 +28,6 @@ export function addFavourite (item , favouritesStored) {
   favouritesStored.push(item) ; 
   favouritesStored = JSON.stringify(favouritesStored) ;  
   localStorage.setItem ("favourites" , favouritesStored) ; 
-
-  console.log ("localStorage from addFavourite() : " , localStorage.getItem("favourites")) ;
 }
 
 export function deleteFavourite (item , favouritesStored) {
@@ -42,8 +40,6 @@ export function deleteFavourite (item , favouritesStored) {
   ) ;
   favouritesStored = JSON.stringify(favouritesStored) ;  
   localStorage.setItem("favourites" , favouritesStored) ; 
-
-  console.log ("localStorage from deleteFavourite() : " , localStorage.getItem("favourites")) ;
 }
 
 export function getFavourites () {

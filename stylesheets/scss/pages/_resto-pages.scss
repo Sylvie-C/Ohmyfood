@@ -31,7 +31,7 @@
       @include heart-icons;
     }
 
-    &__btnfield {
+    &__btnContainer {
       width: 100%;
       @include alignx-xcenter;
     }
@@ -129,20 +129,7 @@
 
     @include alignx-xycenter;
   }
-
-  // check box animation
-  &:active>&__check {
-    width: 20%; // default check container width before animation = 0
-    transition: all .5s ease-in-out;
-  }
-
-  &:active>&__info {
-    width: 80%; // default text container width before animation = 100% 
-    transition: all .5s ease-in-out;
-  }
 }
-
-
 
 // -------  MEDIA QUERIES  -------
 
@@ -156,20 +143,6 @@
         width: 80%;
         margin: auto;
       }
-    }
-  }
-
-  .card02 {
-
-    // check box animation
-    &:hover>&__check {
-      width: 20%; // default check container width before animation = 0
-      transition: all .5s ease-in-out;
-    }
-
-    &:hover>&__info {
-      width: 80%; // default text container width before animation = 100% 
-      transition: all .5s ease-in-out;
     }
   }
 

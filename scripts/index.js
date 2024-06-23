@@ -1,9 +1,4 @@
-import { 
-  displayFavourites , 
-  addFavourite , 
-  deleteFavourite , 
-  getFavourites 
-} from "./API_module.js"; 
+import * as fav from "./modules/favourites_module.js" ; 
 
 // localStorage.clear() ; 
 
@@ -17,13 +12,11 @@ if (favouritesStored) {
   favourites = favouritesStored ; 
 }
 else { 
-  favourites = getFavourites() ; 
+  favourites = fav.getFavourites() ; 
   favouritesStored = [] ; 
 }
 
-console.log ("localStorage on home page load : " , favouritesStored) ;
-
-displayFavourites (likeIcons , favouritesStored) ; // display "likes" on page load
+fav.displayFavourites (likeIcons , favouritesStored) ; // display "likes" on page load
 
 // Favourites : manage user click on "like" icon
 container.addEventListener( "click" , 
@@ -40,18 +33,13 @@ container.addEventListener( "click" ,
       const isFavourite = (favourites.includes(clickedEltID)) || (favouritesStored.includes(clickedEltID)) ; 
 
       if (isFavourite) {
-        deleteFavourite(clickedEltID , favouritesStored) ; 
+        fav.deleteFavourite(clickedEltID , favouritesStored) ; 
         clickedElt.style.opacity = 0 ; // update display "unlike"
-        favourites = getFavourites() ; 
-
-        console.log ("favoris après delete (current session) : " , favourites) ; 
+        favourites = fav.getFavourites() ; 
       }else{
-        addFavourite(clickedEltID , favouritesStored) ; 
+        fav.addFavourite(clickedEltID , favouritesStored) ; 
         clickedElt.style.opacity = 1 ; // update display "like"
-        favourites = getFavourites() ; // updated current session "likes"
-
-        console.log ("favoris après add (current session) : " , favourites) ;  
-        console.log ("favoris localStorage après add : " , localStorage.getItem("favourites")) ; 
+        favourites = fav.getFavourites() ; // updated current session "likes" 
       }
     }
   } 
