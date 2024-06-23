@@ -51,11 +51,11 @@
   }
 }
 
-@keyframes slide01 {
-
-  /*  Slide from left and outside of the screen viewport to initial position (page left). 
-    Hides initial position on page load with opacity 0 at first. 
+/*  
+  Slide from left and outside of the screen viewport to initial position (page left). 
+  Hides initial position on page load with opacity 0 at first. 
 */
+@keyframes slide01 {
   from {
     opacity: 0;
     transform: translateX(-100%);

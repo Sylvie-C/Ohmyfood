@@ -25,8 +25,7 @@ console.log ("localStorage on home page load : " , favouritesStored) ;
 
 displayFavourites (likeIcons , favouritesStored) ; // display "likes" on page load
 
-// Favourites : manage user click
-
+// Favourites : manage user click on "like" icon
 container.addEventListener( "click" , 
   
   (event) => {

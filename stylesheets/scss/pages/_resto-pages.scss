@@ -53,28 +53,12 @@
     width: 50px;
   }
 
-  /*  HTML standards : <a> or <button> tag for future onclick event 
-        The user should click on a dish card to add this dish to his/her menu kart
-        If button is used (<button class="card02"> instead of <div> for W3C rules) , 
-        just uncomment following style. 
-    */
-  // button {  
-  //     width: 100%; 
-  //     border:  none; 
-  //     background: none; 
-  //     cursor: pointer; 
-  // }
-
   &__cardsblock {
-
-    /*  Plates cards arrive from left of the screen on page load, 
-        smoothly and with delay between them. 
-    */
     * {
       animation: slide01 1s;
     }
 
-    // mixin to define delay of *100ms increment for each element in list -> for animation of 1s, 10 cards possible
+    // mixin to define delay of *100ms increment for each element in list -> animation of 1s (10 cards max)
     @include cardsDelay ('.dish01', '.dish02', '.dish03', '.dish04', '.dish05', '.dish06', '.dish07', '.dish08', '.dish09', '.dish10');
   }
 }
@@ -157,6 +141,7 @@
     transition: all .5s ease-in-out;
   }
 }
+
 
 
 // -------  MEDIA QUERIES  -------

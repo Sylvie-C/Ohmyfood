@@ -50,12 +50,6 @@
 
   &__button {
     @include btn01;
-
-    &:active {
-      filter: opacity(.8);
-      box-shadow: $bshadow-dark ;
-      cursor: pointer;
-    }
   }
 }
 
@@ -231,16 +225,6 @@
     &__title {
       font-family: roboto;
       font-size: 2.2rem;
-    }
-
-    &__button {
-      margin: 0;
-
-      &:hover {
-        filter: opacity(.8);
-        box-shadow: $bshadow-dark ;
-        cursor: pointer;
-      }
     }
   }
 

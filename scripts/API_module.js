@@ -19,13 +19,11 @@ export function displayFavourites (htmlObj , favArray) {
   }
 }
 
-// current session data storage
+// home page : current session "like" storage
 let favourites = [] ; 
 
 export function addFavourite (item , favouritesStored) {
   favourites.push(item) ;
-
-  // if (!favouritesStored) { favouritesStored = [] ; }
    
   favouritesStored.push(item) ; 
   favouritesStored = JSON.stringify(favouritesStored) ;  
@@ -51,4 +49,3 @@ export function deleteFavourite (item , favouritesStored) {
 export function getFavourites () {
   return favourites ; 
 }
-
